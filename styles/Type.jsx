@@ -23,8 +23,8 @@ export const h1styles = css`
 
 export const h2styles = css`
     font-family: ${merriweather};
-    font-size: 6.8rem;
-    line-height: 8rem;
+    font-size: 6.4rem;
+    line-height: 6.5rem;
     font-weight: 300;
 
     @media ${MediaQueries.tablet} {

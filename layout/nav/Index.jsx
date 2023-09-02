@@ -1,23 +1,28 @@
-import ExplodingButton from '@/components/ui/explodingButton/Index';
 import styled from 'styled-components';
 import Link from 'next/link';
+import ExpandingButton from '@/components/ui/ expandingButton/Index';
+
+const StyledExpandingButton = styled(ExpandingButton)`
+    position: fixed;
+`;
 
 const Nav = styled.nav`
+    display: flex;
+    flex-direction: column;
     max-width: 500px;
-    max-height: 500px;
     width: 100%;
-    height: 100%;
+`;
+
+const Ul = styled.ul`
     display: flex;
     flex-direction: column;
 `;
-
-const Ul = styled.ul``;
 
 const Li = styled.li``;
 
 export default function Navigation({ data }) {
     return (
-        <ExplodingButton>
+        <StyledExpandingButton>
             <Nav>
                 <Ul>
                     {data.links.map((link, index) => {
@@ -31,6 +36,6 @@ export default function Navigation({ data }) {
                     })}
                 </Ul>
             </Nav>
-        </ExplodingButton>
+        </StyledExpandingButton>
     );
 }

@@ -23,7 +23,7 @@ export const landingPageData = {
         heading: 'Creative, Analytical, Passionate',
         body: '',
         img: {
-            url: '',
+            url: '/Josh_Tully.PNG',
             alt: '',
         },
     },

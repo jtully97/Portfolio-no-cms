@@ -11,13 +11,14 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     position: fixed;
-    max-height: ${(props) => (props.$loaded ? '85px' : 'unset')};
+    /* max-height: ${(props) => (props.$loaded ? '85px' : 'unset')};
     max-width: ${(props) => (props.$loaded ? '85px' : 'unset')};
     height: ${(props) => (props.$loaded ? '85px' : 'unset')};
     width: ${(props) => (props.$loaded ? '85px' : 'unset')};
-    padding: ${(props) => (props.$loaded ? 'unset' : '38px 24px')};
+    padding: ${(props) => (props.$loaded ? 'unset' : '38px 24px')}; */
     top: 20px;
-    right: -100%;
+    /* right: -100%; */
+    right: 0;
     z-index: 100;
     transform: rotate(-180deg);
     transition: all ease 0.4s;
@@ -85,10 +86,11 @@ const Container = styled.div`
 
     #contentWrapper {
         display: flex;
-        height: ${(props) => (props.$loaded ? '0px' : 'unset')};
-        scale: ${(props) => (props.$loaded ? '0' : 'unset')};
+        position: relative;
+        /* height: ${(props) => (props.$loaded ? '0px' : 'unset')};
+        scale: ${(props) => (props.$loaded ? '0' : 'unset')}; */
         transition: all ease 0.4s;
-        opacity: 0;
+        /* opacity: 0; */
         z-index: 10;
         align-items: center;
         flex-direction: column;
@@ -173,7 +175,7 @@ export default function ExplodingButton({ ...props }) {
 
             const width = element.clientWidth;
 
-            console.log(element.firstChild);
+            console.log(element);
             setWidth(width);
 
             const height = element.clientHeight;
@@ -185,12 +187,12 @@ export default function ExplodingButton({ ...props }) {
 
     return (
         <Container
-            className={`${expand ? 'expand' : ''} ${loaded ? 'active' : ''} `}
+            // className={`${expand ? 'expand' : ''} ${loaded ? 'active' : ''} `}
             $showText={showText}
             id='floatingPopup'
-            $loaded={loaded}
-            width={width}
-            height={height}
+            // $loaded={loaded}
+            // width={width}
+            // height={height}
         >
             <motion.button
                 className='close'

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 import MainHero from '@/components/modules/mainHero.jsx/Index';
-import ImageContent from '@/components/modules/imageContent';
+import ImageContent from '@/components/modules/imageContent/Index';
 import CardShowcase from '@/components/modules/cardShowcase/Index';
 import { landingPageData } from '@/data/Index';
 

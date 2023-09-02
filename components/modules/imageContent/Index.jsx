@@ -34,7 +34,7 @@ const InnerContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-    max-width: 450px;
+    max-width: 643px;
 
     h2 {
         ${h2styles}
@@ -124,7 +124,19 @@ export default function ImageContent({ data }) {
         restDelta: 0.001,
     });
 
-    const imgPercentage = useTransform(scrollYProgress, [0.2, 0.65], [90, 0]);
+    const scrollPercentage4 = useTransform(
+        scrollYProgress,
+        [0.65, 0.75],
+        [0, 1000]
+    );
+
+    const scrollPercentageSpring4 = useSpring(scrollPercentage4, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+
+    const imgPercentage = useTransform(scrollYProgress, [0.4, 1], [300, 0]);
 
     const imgPercentageSpring = useSpring(imgPercentage, {
         stiffness: 100,
@@ -149,12 +161,12 @@ export default function ImageContent({ data }) {
         switch (index) {
             case 0:
                 return scrollPercentageSpring1;
-                break;
             case 1:
                 return scrollPercentageSpring2;
-                break;
             case 2:
                 return scrollPercentageSpring3;
+            case 3:
+                return scrollPercentageSpring4;
                 break;
         }
     };
@@ -207,18 +219,17 @@ export default function ImageContent({ data }) {
                 <motion.div
                     initial={{
                         opacity: 0,
-                        rotateX: 90,
                     }}
                     style={{
-                        transformPerspective: '800px',
-                        transformOrigin: 'bottom center',
-                        rotateX: imgPercentageSpring,
+                        translateY: imgPercentageSpring,
                         opacity: imgOpacity,
+                        translateX: pickPercentage(3),
                     }}
                 >
-                    <Img src='/homepage.png' alt='test' />
+                    <Img src='/Josh_Tully.png' alt='test' />
                 </motion.div>
             </InnerContainer>
+            x
         </Section>
     );
 }
