@@ -59,6 +59,7 @@ const ExpandButton = styled.button`
     }
 
     span {
+        color: #ffff;
         font-size: 2rem;
         font-family: ${neonderthaw};
         -webkit-animation: ${glow} 0.4s ease-in-out alternate;

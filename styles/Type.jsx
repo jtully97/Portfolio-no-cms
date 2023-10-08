@@ -26,6 +26,7 @@ export const eyebrow = css`
     font-size: 5rem;
     line-height: 5.6rem;
     display: inline-block;
+    color: #ffff;
 
     @media ${MediaQueries.tablet} {
         font-size: 2.9rem;
@@ -43,6 +44,7 @@ export const h1styles = css`
     text-transform: uppercase;
     font-size: 9rem;
     line-height: 9.4rem;
+    color: #ffff;
 
     @media ${MediaQueries.tablet} {
         font-size: 4rem;
@@ -59,6 +61,7 @@ export const h2styles = css`
     font-family: ${lato};
     font-size: 5.4rem;
     line-height: 5.5rem;
+    color: #ffff;
 
     @media ${MediaQueries.tablet} {
         font-size: 4.2rem;
@@ -71,6 +74,7 @@ export const h3styles = css`
     font-size: 5.2rem;
     line-height: 6.3rem;
     font-weight: 300;
+    color: #ffff;
 
     @media ${MediaQueries.tablet} {
         font-size: 4.8rem;
@@ -88,6 +92,7 @@ export const h4styles = css`
     font-size: 4.6rem;
     line-height: 5.4rem;
     font-weight: 300;
+    color: #ffff;
 
     @media ${MediaQueries.tablet} {
         font-size: 4.1rem;
@@ -105,6 +110,7 @@ export const pLarge = css`
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 300;
+    color: #ffff;
 
     @media ${MediaQueries.tablet} {
         font-size: 1.4rem;
@@ -117,6 +123,7 @@ export const pBase = css`
     font-size: 1.5rem;
     line-height: 1.7rem;
     font-weight: 300;
+    color: #ffff;
 
     @media ${MediaQueries.tablet} {
         font-size: 1.3rem;
@@ -129,6 +136,7 @@ export const pSmall = css`
     font-size: 1.5rem;
     line-height: 1.7rem;
     font-weight: 300;
+    color: #ffff;
 
     @media ${MediaQueries.tablet} {
         font-size: 1.3rem;
@@ -141,6 +149,7 @@ export const pXSmall = css`
     font-size: 1.4rem;
     line-height: 1.9rem;
     font-weight: 300;
+    color: #ffff;
 `;
 
 export const buttonType = css`
@@ -150,4 +159,5 @@ export const buttonType = css`
     font-weight: 300;
     text-transform: uppercase;
     color: white;
+    color: #ffff;
 `;
