@@ -67,6 +67,7 @@ const ExpandButton = styled.button`
         animation: ${glow} 0.4s ease-in-out alternate;
         animation-fill-mode: forwards;
         display: block;
+        margin-bottom: 8px;
     }
 `;
 
