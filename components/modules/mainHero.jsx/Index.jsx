@@ -87,6 +87,10 @@ const ContentContainer = styled.div`
         span.eyebrow {
             ${eyebrow}
             margin-bottom: 24px;
+
+            @media ${MediaQueries.mobile} {
+                margin-bottom: 20px;
+            }
         }
     }
     h2 {
@@ -94,7 +98,7 @@ const ContentContainer = styled.div`
         text-align: center;
         margin-top: 8px;
 
-        @media (max-width: 1104px) {
+        @media ${MediaQueries.mobile} {
             margin-top: 4px;
         }
     }
