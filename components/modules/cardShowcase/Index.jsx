@@ -59,17 +59,17 @@ const GridSection = styled.div`
 
     @media ${MediaQueries.tablet} {
         grid-template-columns: repeat(4, 1fr);
-        gap: 6% 4%;
+        gap: 38px 24px;
+        margin-top: 40px;
     }
 
     @media ${customSmallTablet} {
         grid-template-columns: repeat(3, 1fr);
-        gap: 4% 5%;
+        gap: 30px 24px;
     }
 
     @media ${customXSTablet} {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2% 6%;
     }
 `;
 

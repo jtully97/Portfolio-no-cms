@@ -64,8 +64,8 @@ export const h2styles = css`
     color: #ffff;
 
     @media ${MediaQueries.tablet} {
-        font-size: 4.2rem;
-        line-height: 4.4rem;
+        font-size: 3.5rem;
+        line-height: 3.7rem;
     }
 `;
 
