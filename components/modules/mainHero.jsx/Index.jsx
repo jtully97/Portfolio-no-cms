@@ -222,7 +222,7 @@ const MainHero = () => {
                         </motion.span>
                         <motion.span
                             className='large-txt right'
-                            initial={{ x: 200, opacity: 0 }}
+                            initial={{ x: 200, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1.2, duration: 0.7 }}
                             style={{
