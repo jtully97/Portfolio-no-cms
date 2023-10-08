@@ -82,24 +82,11 @@ const ContentContainer = styled.div`
         span.large-txt {
             ${h1styles}
             display: inline-block;
-
-            @media (max-width: 1104px) {
-                font-size: 7rem;
-            }
-            @media (max-width: 788px) {
-                font-size: 5rem;
-            }
-            @media (max-width: 539px) {
-                font-size: 3.5rem;
-            }
-
-            @media (max-width: 400px) {
-                font-size: 2.8rem;
-            }
         }
 
         span.eyebrow {
             ${eyebrow}
+            margin-bottom: 24px;
         }
     }
     h2 {

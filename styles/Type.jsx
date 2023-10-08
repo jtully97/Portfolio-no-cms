@@ -15,7 +15,7 @@ export const glow = keyframes`
 const lato = `'Lato', sans-serif`;
 const merriweather = `'Merriweather', sans`;
 const pacifico = 'Pacifico, sans-serif';
-const neonderthaw = 'Neonderthaw, cursive';
+export const neonderthaw = 'Neonderthaw, cursive';
 
 export const eyebrow = css`
     font-family: ${neonderthaw};
@@ -27,17 +27,14 @@ export const eyebrow = css`
     line-height: 5.6rem;
     display: inline-block;
 
-    @media (max-width: 1104px) {
-        font-size: 4rem;
-        line-height: 73px;
+    @media ${MediaQueries.tablet} {
+        font-size: 2.9rem;
+        line-height: 2.4rem;
     }
 
-    @media (max-width: 788px) {
-        font-size: 3rem;
-    }
-
-    @media (max-width: 539px) {
-        line-height: 55px;
+    @media ${MediaQueries.mobile} {
+        font-size: 2.4rem;
+        line-height: 2rem;
     }
 `;
 
@@ -45,16 +42,16 @@ export const h1styles = css`
     font-family: ${lato};
     text-transform: uppercase;
     font-size: 9rem;
-    line-height: 11rem;
+    line-height: 9.4rem;
 
     @media ${MediaQueries.tablet} {
-        font-size: 8rem;
-        line-height: 8.8rem;
+        font-size: 4rem;
+        line-height: 4.8rem;
     }
 
     @media ${MediaQueries.mobile} {
-        font-size: 5.2rem;
-        line-height: 5.8rem;
+        font-size: 3rem;
+        line-height: 3.2rem;
     }
 `;
 
@@ -64,13 +61,8 @@ export const h2styles = css`
     line-height: 5.5rem;
 
     @media ${MediaQueries.tablet} {
-        font-size: 4rem;
-        line-height: 4.1rem;
-    }
-
-    @media ${MediaQueries.mobile} {
-        font-size: 4.6rem;
-        line-height: 5.8rem;
+        font-size: 4.2rem;
+        line-height: 4.4rem;
     }
 `;
 
@@ -115,13 +107,8 @@ export const pLarge = css`
     font-weight: 300;
 
     @media ${MediaQueries.tablet} {
-        font-size: 2rem;
-        line-height: 2.2rem;
-    }
-
-    @media ${MediaQueries.mobile} {
-        font-size: 1.8rem;
-        line-height: 2.6rem;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
     }
 `;
 

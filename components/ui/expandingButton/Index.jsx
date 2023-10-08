@@ -2,18 +2,8 @@ import styled, { keyframes } from 'styled-components';
 import { variables } from '@/styles/Variables';
 import { useEffect, useState } from 'react';
 import Close from '@/components/svg/close/Index';
-
-//TODO: put this into a shared styles file
-const glow = keyframes`
-  
-        from {
-            text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
-        }
-  
-         to {
-             text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
-        }
-`;
+import { neonderthaw } from '@/styles/Type';
+import { glow } from '@/styles/Type';
 
 const Container = styled.div`
     z-index: 10;
@@ -69,8 +59,8 @@ const ExpandButton = styled.button`
     }
 
     span {
-        font-size: 18px;
-        font-family: ${variables.Pacifico};
+        font-size: 2rem;
+        font-family: ${neonderthaw};
         -webkit-animation: ${glow} 0.4s ease-in-out alternate;
         -moz-animation: ${glow} 0.4s ease-in-out alternate;
         animation: ${glow} 0.4s ease-in-out alternate;
