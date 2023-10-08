@@ -26,7 +26,7 @@ const Section = styled.section`
         width: 100%;
         position: absolute;
         bottom: 0;
-        height: 40vh;
+        height: 60%;
         background: #ffffff00;
         background: -webkit-linear-gradient(top, #ffffff00, ${variables.black});
         background: -moz-linear-gradient(top, #ffffff00, ${variables.black});
@@ -55,12 +55,6 @@ const OpaqueFilter = styled.div`
     bottom: 0;
     width: 80%;
     z-index: 1;
-
-    @media ${MediaQueries.tablet} {
-        width: 100%;
-
-        ${GlassEffect}
-    }
 `;
 
 const ContentContainer = styled.div`
