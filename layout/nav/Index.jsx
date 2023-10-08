@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import ExpandingButton from '@/components/ui/expandingButton/Index';
 import { pBase } from '@/styles/Type';
-import { variables } from '@/styles/variables/Index';
+import { variables } from '@/styles/Variables';
+import { MediaQueries } from '@/styles/Utilities';
 
 const StyledExpandingButton = styled(ExpandingButton)`
     position: fixed;
@@ -32,9 +33,25 @@ const StyledLink = styled(Link)`
     ${pBase}
     color: ${variables.color2};
     transition: color ease-out 0.3s;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 0px;
+        background-color: ${variables.color1};
+        transition: width ease-out 0.3s;
+        left: 0;
+        bottom: 0px;
+    }
 
     &:hover {
         color: ${variables.color1};
+
+        &:after {
+            width: 100%;
+        }
     }
 `;
 

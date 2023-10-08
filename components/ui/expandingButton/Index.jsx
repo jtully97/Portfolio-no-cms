@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { variables } from '@/styles/variables/Index';
+import { variables } from '@/styles/Variables';
 import { useEffect, useState } from 'react';
 import Close from '@/components/svg/close/Index';
 
@@ -19,7 +19,6 @@ const Container = styled.div`
     z-index: 10;
     display: flex;
     flex-direction: column;
-    //${(props) => props.$initialLoad && 'width: 100%; height: 100%'};
     width: ${(props) =>
         props.$active ? props.$dimensions.childWidth : '85px'};
     height: ${(props) =>
@@ -29,7 +28,7 @@ const Container = styled.div`
     border-radius: ${(props) => (props.$active ? '8px' : '50%')};
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: ${(props) =>
-        props.$active ? props.$bgColor : variables.color2};
+        props.$active ? props.$bgColor : variables.color1};
     transform: ${(props) =>
         props.$active ? 'rotate(0deg)' : 'rotate(-15deg)'};
     border: 2px solid ${variables.color4};
@@ -47,7 +46,7 @@ const InnerContainer = styled.div`
 const ContentWrapper = styled.div`
     position: relative;
 
-    :first-child {
+    > :first-child {
         scale: ${(props) => (props.$active ? '1' : '0')};
         opacity: ${(props) => (props.$active ? '1' : '0')};
         background-color: ${(props) => props.$active && props.$parentBgColor};
@@ -64,6 +63,10 @@ const ExpandButton = styled.button`
     cursor: pointer;
     transition: all ease-out 0.4s;
     flex-shrink: 0;
+
+    &:hover {
+        scale: 1.2;
+    }
 
     span {
         font-size: 18px;
@@ -138,7 +141,7 @@ export default function ExpandingButton({ className, ...props }) {
         let childBgColor = childComputedStyles.backgroundColor;
         setChildColor(childBgColor);
 
-        setInitialLoad(false);
+        setActive(false);
     }, []);
 
     const toggleActive = () => {
@@ -162,7 +165,7 @@ export default function ExpandingButton({ className, ...props }) {
                 id='expand-button'
                 $active={active}
             >
-                <span>Lost?</span>
+                <span>lost?</span>
             </ExpandButton>
             <InnerContainer
                 $bgColor={childColor}

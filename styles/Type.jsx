@@ -2,12 +2,13 @@ import { MediaQueries } from './Utilities';
 import { css } from 'styled-components';
 
 const lato = `'Lato', sans-serif`;
-const merriweather = `'Merriweather', serif`;
+const merriweather = `'Merriweather', sans`;
+const pacifico = 'Pacifico, sans-serif';
 
 export const h1styles = css`
-    font-family: ${merriweather};
-    font-size: 10rem;
-    font-weight: 300;
+    font-family: ${lato};
+    text-transform: uppercase;
+    font-size: 9rem;
     line-height: 11rem;
 
     @media ${MediaQueries.tablet} {
@@ -22,14 +23,13 @@ export const h1styles = css`
 `;
 
 export const h2styles = css`
-    font-family: ${merriweather};
-    font-size: 6.4rem;
-    line-height: 6.5rem;
-    font-weight: 300;
+    font-family: ${lato};
+    font-size: 5.4rem;
+    line-height: 5.5rem;
 
     @media ${MediaQueries.tablet} {
-        font-size: 6rem;
-        line-height: 6.8rem;
+        font-size: 4rem;
+        line-height: 4.1rem;
     }
 
     @media ${MediaQueries.mobile} {
@@ -39,7 +39,7 @@ export const h2styles = css`
 `;
 
 export const h3styles = css`
-    font-family: ${merriweather};
+    font-family: ${lato};
     font-size: 5.2rem;
     line-height: 6.3rem;
     font-weight: 300;
@@ -56,7 +56,7 @@ export const h3styles = css`
 `;
 
 export const h4styles = css`
-    font-family: ${merriweather};
+    font-family: ${lato};
     font-size: 4.6rem;
     line-height: 5.4rem;
     font-weight: 300;
@@ -74,30 +74,13 @@ export const h4styles = css`
 
 export const pLarge = css`
     font-family: ${lato};
-    font-size: 3.2rem;
-    line-height: 3.6rem;
-    font-weight: 300;
-
-    @media ${MediaQueries.tablet} {
-        font-size: 2.9rem;
-        line-height: 3.4rem;
-    }
-
-    @media ${MediaQueries.mobile} {
-        font-size: 2.3rem;
-        line-height: 2.5rem;
-    }
-`;
-
-export const pBase = css`
-    font-family: ${lato};
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 300;
 
     @media ${MediaQueries.tablet} {
         font-size: 2rem;
-        line-height: 3rem;
+        line-height: 2.2rem;
     }
 
     @media ${MediaQueries.mobile} {
@@ -106,20 +89,27 @@ export const pBase = css`
     }
 `;
 
-export const pSmall = css`
+export const pBase = css`
     font-family: ${lato};
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
     font-weight: 300;
 
     @media ${MediaQueries.tablet} {
-        font-size: 1.8rem;
-        line-height: 3rem;
+        font-size: 1.3rem;
+        line-height: 1.4rem;
     }
+`;
 
-    @media ${MediaQueries.mobile} {
-        font-size: 1.5rem;
-        line-height: 2.6rem;
+export const pSmall = css`
+    font-family: ${lato};
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    font-weight: 300;
+
+    @media ${MediaQueries.tablet} {
+        font-size: 1.3rem;
+        line-height: 1.4rem;
     }
 `;
 

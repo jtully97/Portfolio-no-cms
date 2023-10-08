@@ -3,7 +3,7 @@ import {
     desktopWidthInt,
     mobileWidthInt,
     tabletWidthInt2,
-} from './variables/Index';
+} from './Variables';
 import { css } from 'styled-components';
 
 export const MediaQueries = {

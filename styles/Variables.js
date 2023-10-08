@@ -22,10 +22,9 @@ export const variables = {
     white: '#ffff',
 
     // Type
-    joseph: 'Lato, sans-serif',
+    lato: 'Lato, sans-serif',
     openSans: 'Montserrat, sans-serif',
-
-    Pacifico: 'Pacifico, cursive',
+    Pacifico: 'Pacifico, sans-serif',
 
     // Company names
     companyName: 'Josh Tully',

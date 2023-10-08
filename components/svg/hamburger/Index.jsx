@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { variables } from '@/styles/variables/Index';
+import { variables } from '@/styles/Variables';
 
 const Svg = styled.svg`
     polyline {

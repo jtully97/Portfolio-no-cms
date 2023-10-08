@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { MediaQueries } from '@/styles/Utilities';
-import { variables } from '@/styles/variables/Index';
+import { variables } from '@/styles/Variables';
 import { Container } from '@/styles/Utilities';
-import { pBase } from '@/styles/Type';
+import { pLarge } from '@/styles/Type';
 import { GlassEffect } from '@/styles/Utilities';
 import {
     motion,
@@ -12,20 +12,9 @@ import {
     useTransform,
     useSpring,
 } from 'framer-motion';
+import { h1styles } from '@/styles/Type';
 
-const glow = keyframes`
-  
-        /* from {
-            text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 150px #0008e6,
-                0 0 40px #0008e6, 0 0 50px #0008e6, 0 0 30px #0008e6,
-                0 0 70px #0008e6;
-        }
-        to {
-            text-shadow: 0 0 20px #fff, 0 0 10px #00d9ff, 0 0 20px #00d9ff,
-                0 0 50px #00d9ff, 0 0 30px #00d9ff, 0 0 350px #00d9ff,
-                0 0 40px #00d9ff;
-        } */
-        
+export const glow = keyframes`    
         from {
             text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
         }
@@ -40,8 +29,7 @@ const Section = styled.section`
     width: 100vw;
     height: 100vh;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
     &::after {
         content: '';
         width: 100%;
@@ -49,9 +37,9 @@ const Section = styled.section`
         bottom: 0;
         height: 40vh;
         background: #ffffff00;
-        background: -webkit-linear-gradient(top, #ffffff00, #060011);
-        background: -moz-linear-gradient(top, #ffffff00, #060011);
-        background: linear-gradient(to bottom, #ffffff00, #060011);
+        background: -webkit-linear-gradient(top, #ffffff00, ${variables.black});
+        background: -moz-linear-gradient(top, #ffffff00, ${variables.black});
+        background: linear-gradient(to bottom, #ffffff00, ${variables.black});
     }
 `;
 
@@ -101,9 +89,7 @@ const ContentContainer = styled.div`
         display: block;
 
         span.large-txt {
-            font-family: ${variables.joseph};
-            font-size: 9rem;
-            text-transform: uppercase;
+            ${h1styles}
             display: inline-block;
 
             @media (max-width: 1104px) {
@@ -146,7 +132,7 @@ const ContentContainer = styled.div`
         }
     }
     h2 {
-        ${pBase}
+        ${pLarge}
         text-align: center;
         margin-top: 8px;
 

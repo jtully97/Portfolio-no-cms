@@ -1,8 +1,8 @@
 export const navData = {
     links: [
         {
-            text: 'About',
-            href: '#about',
+            text: 'Skills',
+            href: '#skills',
             target: '',
         },
         {
@@ -28,30 +28,115 @@ export const landingPageData = {
         },
     },
     showcase: {
+        eyebrow: 'Check Out',
+        heading: 'Some of My Skills',
         cards: [
             {
-                heading: 'Test',
-                body: 'test test test est t tttest test etitties titties test',
+                skill: 'Javascript',
+                img: {
+                    src: '/techIcons/javascript.svg',
+                    alt: 'javascript icon',
+                },
             },
             {
-                heading: 'Test2',
-                body: 'test test test est t tttest test etitties titties test',
+                skill: 'Node.js',
+                img: {
+                    src: '/techIcons/nodejs.svg',
+                    alt: 'node.js icon',
+                },
             },
             {
-                heading: 'Test3',
-                body: 'test test test est t tttest test etitties titties test',
+                skill: 'React.js',
+                img: {
+                    src: '/techIcons/react.svg',
+                    alt: 'react.js icon',
+                },
             },
             {
-                heading: 'Test4',
-                body: 'test test test est t tttest test etitties titties test',
+                skill: 'Next.js',
+                img: {
+                    src: '/techIcons/nextjs-13.svg',
+                    alt: 'next.js icon',
+                },
             },
             {
-                heading: 'Test5',
-                body: 'test test test est t tttest test etitties titties test',
+                skill: 'Styled Components',
+                img: {
+                    src: '/techIcons/styled-components-1.svg',
+                    alt: 'styled components icon',
+                },
             },
             {
-                heading: 'Test6',
-                body: 'test test test est t tttest test etitties titties test',
+                skill: 'Strapi',
+                img: {
+                    src: '/techIcons/strapi-2.svg',
+                    alt: 'strapi icon',
+                },
+            },
+            {
+                skill: 'HTML',
+                img: {
+                    src: '/techIcons/html5.svg',
+                    alt: '',
+                },
+            },
+
+            {
+                skill: 'SASS & SCSS',
+                img: {
+                    src: '/techIcons/sass.svg',
+                    alt: 'sass icon',
+                },
+            },
+            {
+                skill: 'PHP',
+                img: {
+                    src: '/techIcons/php.svg',
+                    alt: 'php icon',
+                },
+            },
+            {
+                skill: 'Python',
+                img: {
+                    src: '/techIcons/python.svg',
+                    alt: 'python icon',
+                },
+            },
+            {
+                skill: 'Java',
+                img: {
+                    src: '/techIcons/java-4.svg',
+                    alt: 'java icon',
+                },
+            },
+            {
+                skill: 'Postgresql',
+                img: {
+                    src: '/techIcons/postgresql.svg',
+                    alt: 'postgresql icon',
+                },
+            },
+            {
+                skill: 'Mysql',
+                img: {
+                    src: '/techIcons/mysql.svg',
+                    alt: 'mysql icon',
+                },
+            },
+            {
+                skill: 'Bash',
+                img: {
+                    src: '/techIcons/bash-1.svg',
+                    alt: 'bash icon',
+                },
+            },
+
+            {
+                skill: 'npm',
+                img: {
+                    src: '/techIcons/npm.svg',
+                    alt: 'npm icon',
+                },
             },
         ],
     },

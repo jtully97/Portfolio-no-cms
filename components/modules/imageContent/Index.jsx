@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Container } from '@/styles/Utilities';
-import { variables } from '@/styles/variables/Index';
+import { variables } from '@/styles/Variables';
 import { h2styles, PSecondary } from '@/styles/Type';
 import { MediaQueries } from '@/styles/Utilities';
 

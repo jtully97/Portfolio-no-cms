@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { variables } from '@/styles/variables/Index';
+import { variables } from '@/styles/Variables';
 import { motion } from 'framer-motion';
 
 const CustomButtonWrapper = styled.div`

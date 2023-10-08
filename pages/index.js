@@ -20,8 +20,11 @@ export default function Home() {
             </Head>
             <main>
                 <MainHero />
-                <ImageContent data={landingPageData.imageContent} />
-                <CardShowcase data={landingPageData.showcase} />
+                <CardShowcase
+                    eyebrow={landingPageData.showcase.eyebrow}
+                    heading={landingPageData.showcase.heading}
+                    cards={landingPageData.showcase.cards}
+                />
             </main>
         </>
     );
