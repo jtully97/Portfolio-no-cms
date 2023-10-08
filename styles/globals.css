@@ -107,6 +107,11 @@ a {
     text-decoration: none;
 }
 
+button:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* Remove the tap highlight */
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;
