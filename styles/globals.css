@@ -108,7 +108,7 @@ a {
 }
 
 button:focus {
-    outline: none;
+    outline: 0;
     -webkit-tap-highlight-color: transparent; /* Remove the tap highlight */
 }
 
