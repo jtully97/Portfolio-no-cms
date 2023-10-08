@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { MediaQueries } from '@/styles/Utilities';
 import { variables } from '@/styles/Variables';
 import { Container } from '@/styles/Utilities';
-import { pLarge } from '@/styles/Type';
+import { pLarge, eyebrow } from '@/styles/Type';
 import { GlassEffect } from '@/styles/Utilities';
 import {
     motion,
@@ -13,16 +13,7 @@ import {
     useSpring,
 } from 'framer-motion';
 import { h1styles } from '@/styles/Type';
-
-export const glow = keyframes`    
-        from {
-            text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
-        }
-  
-         to {
-             text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
-        }
-`;
+import { glow } from '@/styles/Type';
 
 const Section = styled.section`
     background-color: ${variables.color2};
@@ -107,28 +98,8 @@ const ContentContainer = styled.div`
             }
         }
 
-        span.cursive {
-            font-family: ${variables.Pacifico};
-            -webkit-animation: ${glow} 1s ease-in-out alternate;
-            -moz-animation: ${glow} 1s ease-in-out alternate;
-            animation: ${glow} 1s ease-in-out alternate;
-            animation-fill-mode: forwards;
-            font-size: 5rem;
-            line-height: 93px;
-            display: inline-block;
-
-            @media (max-width: 1104px) {
-                font-size: 4rem;
-                line-height: 73px;
-            }
-
-            @media (max-width: 788px) {
-                font-size: 3rem;
-            }
-
-            @media (max-width: 539px) {
-                line-height: 55px;
-            }
+        span.eyebrow {
+            ${eyebrow}
         }
     }
     h2 {
@@ -238,7 +209,7 @@ const MainHero = () => {
                 <ContentContainer>
                     <motion.h1>
                         <motion.span
-                            className='cursive'
+                            className='eyebrow'
                             initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.7, duration: 0.7 }}
@@ -248,7 +219,7 @@ const MainHero = () => {
                                 x: translateX1,
                             }}
                         >
-                            Hello I am
+                            hello i am
                         </motion.span>
                         <br />
                         <motion.span

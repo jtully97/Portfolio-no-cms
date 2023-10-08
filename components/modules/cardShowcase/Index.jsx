@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Container as ContainerStyles, MediaQueries } from '@/styles/Utilities';
 import { variables } from '@/styles/Variables';
-import { h2styles } from '@/styles/Type';
+import { h2styles, eyebrow } from '@/styles/Type';
 import { motion } from 'framer-motion';
 import Card from './components/Card';
 import { glow } from '../mainHero.jsx/Index';
@@ -44,11 +44,7 @@ const Heading = styled.h2`
     ${h2styles}
 
     .eyebrow {
-        font-family: ${variables.Pacifico};
-        -webkit-animation: ${glow} 1s ease-in-out alternate;
-        -moz-animation: ${glow} 1s ease-in-out alternate;
-        animation: ${glow} 1s ease-in-out alternate;
-        animation-fill-mode: forwards;
+        ${eyebrow}
     }
 `;
 
@@ -91,47 +87,41 @@ export default function CardShowcase({ eyebrow, heading, cards }) {
         const eyebrowWords = eyebrowText.split(' ');
 
         // I know i can consolidate this into a function...
-        const eyebrowsWithSpans = eyebrowWords.map(
-            (word, index) =>
-                index < eyebrowWords.length && (
-                    <motion.span
-                        className='eyebrow'
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1, amount: 1 }}
-                        viewport={{ once: true, amount: 1 }}
-                        transition={{ duration: 1, delay: index * 0.15 }}
-                        key={index}
-                    >
-                        {word}{' '}
-                    </motion.span>
-                )
-        );
+        const eyebrowsWithSpans = eyebrowWords.map((word, index) => (
+            <motion.span
+                className='eyebrow'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, amount: 1 }}
+                viewport={{ once: true, amount: 1 }}
+                transition={{ duration: 1, delay: index * 0.15 }}
+                key={index}
+            >
+                {word}
+                {index !== eyebrowWords.length - 1 ? '\u2002' : ''}
+            </motion.span>
+        ));
         setEyebrowsWithSpans(eyebrowsWithSpans);
 
         let startDelay = eyebrowWords.length;
 
-        // Get the text content of the heading
-        const headingText = heading; // Replace with your heading content
-        // Split the text into words
+        const headingText = heading;
         const headingWords = headingText.split(' ');
-        // Create an array of JSX elements with spans
-        const headingWordsWithSpans = headingWords.map(
-            (word, index) =>
-                index < headingWords.length && (
-                    <motion.span
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1, amount: 1 }}
-                        viewport={{ once: true, amount: 1 }}
-                        transition={{
-                            duration: 1,
-                            delay: (startDelay + index) * 0.15,
-                        }}
-                        key={index}
-                    >
-                        {word}{' '}
-                    </motion.span>
-                )
-        );
+
+        const headingWordsWithSpans = headingWords.map((word, index) => (
+            <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, amount: 1 }}
+                viewport={{ once: true, amount: 1 }}
+                transition={{
+                    duration: 1,
+                    delay: (startDelay + index) * 0.15,
+                }}
+                key={index}
+            >
+                {word}
+                {index !== headingWords.length - 1 ? ' ' : ''}
+            </motion.span>
+        ));
         // Set the state to trigger a re-render with the updated content
         setHeadingWithSpans(headingWordsWithSpans);
     }, []);

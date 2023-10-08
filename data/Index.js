@@ -28,7 +28,7 @@ export const landingPageData = {
         },
     },
     showcase: {
-        eyebrow: 'Check Out',
+        eyebrow: 'check out',
         heading: 'Some of My Skills',
         cards: [
             {

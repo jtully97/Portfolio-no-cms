@@ -1,9 +1,45 @@
 import { MediaQueries } from './Utilities';
 import { css } from 'styled-components';
+import { keyframes } from 'styled-components';
+
+export const glow = keyframes`    
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
+        }
+  
+         to {
+             text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
+        }
+`;
 
 const lato = `'Lato', sans-serif`;
 const merriweather = `'Merriweather', sans`;
 const pacifico = 'Pacifico, sans-serif';
+const neonderthaw = 'Neonderthaw, cursive';
+
+export const eyebrow = css`
+    font-family: ${neonderthaw};
+    -webkit-animation: ${glow} 1s ease-in-out alternate;
+    -moz-animation: ${glow} 1s ease-in-out alternate;
+    animation: ${glow} 1s ease-in-out alternate;
+    animation-fill-mode: forwards;
+    font-size: 5rem;
+    line-height: 5.6rem;
+    display: inline-block;
+
+    @media (max-width: 1104px) {
+        font-size: 4rem;
+        line-height: 73px;
+    }
+
+    @media (max-width: 788px) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 539px) {
+        line-height: 55px;
+    }
+`;
 
 export const h1styles = css`
     font-family: ${lato};
