@@ -34,7 +34,7 @@ export const eyebrow = css`
     }
 
     @media ${MediaQueries.mobile} {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
         line-height: 2rem;
     }
 `;

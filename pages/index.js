@@ -4,6 +4,7 @@ const inter = Inter({ subsets: ['latin'] });
 import MainHero from '@/components/modules/mainHero.jsx/Index';
 import ImageContent from '@/components/modules/imageContent/Index';
 import CardShowcase from '@/components/modules/cardShowcase/Index';
+import ProjectShowcase from '@/components/modules/projectShowcase/Index';
 import { landingPageData } from '@/data/Index';
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
                     heading={landingPageData.showcase.heading}
                     cards={landingPageData.showcase.cards}
                 />
+                <ProjectShowcase />
             </main>
         </>
     );

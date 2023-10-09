@@ -10,9 +10,7 @@ import { desktopWidthInt, tabletWidthInt } from '@/styles/Variables';
 
 const customSmallTabletInt = 772;
 const customXSTabletInt = 646;
-
 const customSmallTablet = `(max-width: ${customSmallTabletInt}px)`;
-
 const customXSTablet = `(max-width: ${customXSTabletInt}px)`;
 
 const Container = styled.section`
@@ -34,6 +32,19 @@ const Container = styled.section`
         );
         background: -moz-linear-gradient(bottom, #ffffff00, ${variables.black});
         background: linear-gradient(to top, #ffffff00, ${variables.black});
+        z-index: 0;
+    }
+
+    &::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 30%;
+        background: #ffffff00;
+        background: -webkit-linear-gradient(top, #ffffff00, ${variables.black});
+        background: -moz-linear-gradient(top, #ffffff00, ${variables.black});
+        background: linear-gradient(to bottom, #ffffff00, ${variables.black});
         z-index: 0;
     }
 `;
@@ -87,7 +98,7 @@ export default function CardShowcase({ eyebrow, heading, cards }) {
     const [eyebrowsWithSpans, setEyebrowsWithSpans] = useState([]);
     const [viewType, setViewType] = useState(null);
 
-    const calculateDelay = (index, viewType) => {
+    const calculateDelayWGridColumns = (index, viewType) => {
         let numColumns;
 
         switch (viewType) {
@@ -183,14 +194,17 @@ export default function CardShowcase({ eyebrow, heading, cards }) {
                 <GridSection>
                     {cards?.map((card, index) => {
                         const { img, skill } = card;
-                        // Calculate the delay based on the index (adjust the multiplier as needed)
-                        const delay = calculateDelay(index, viewType); // Adjust the multiplier to control delay
+
+                        const delay = calculateDelayWGridColumns(
+                            index,
+                            viewType
+                        );
 
                         const cardMotionProps = {
                             ...sharedMotionProps,
                             transition: {
                                 ...sharedMotionProps.transition,
-                                delay, // Add the calculated delay
+                                delay,
                             },
                         };
 
