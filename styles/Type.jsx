@@ -52,7 +52,7 @@ export const h1styles = css`
     }
 
     @media ${MediaQueries.mobile} {
-        font-size: 3rem;
+        font-size: 3.5rem;
         line-height: 3.2rem;
     }
 `;
@@ -66,6 +66,11 @@ export const h2styles = css`
     @media ${MediaQueries.tablet} {
         font-size: 3.5rem;
         line-height: 3.7rem;
+    }
+
+    @media ${MediaQueries.tablet} {
+        font-size: 3rem;
+        line-height: 3.2rem;
     }
 `;
 
