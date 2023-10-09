@@ -29,7 +29,7 @@ export const landingPageData = {
     },
     showcase: {
         eyebrow: 'check out',
-        heading: 'Some of My Skills',
+        heading: 'Some Of My Skills',
         cards: [
             {
                 skill: 'Javascript',
@@ -139,5 +139,9 @@ export const landingPageData = {
                 },
             },
         ],
+    },
+    projectShowcase: {
+        eyebrow: 'now showing',
+        heading: 'Some of My Projects',
     },
 };

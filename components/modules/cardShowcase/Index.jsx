@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import Card from './components/Card';
 import { glow } from '../mainHero.jsx/Index';
 import { desktopWidthInt, tabletWidthInt } from '@/styles/Variables';
+import useEyebrowHeadingAnimation from '@/customHooks/useEyebrowHeadingAnimation';
 
 const customSmallTabletInt = 772;
 const customXSTabletInt = 646;
@@ -94,9 +95,11 @@ const StyledCard = styled(Card)`
 `;
 
 export default function CardShowcase({ eyebrow, heading, cards }) {
-    const [headingWithSpans, setHeadingWithSpans] = useState([]);
-    const [eyebrowsWithSpans, setEyebrowsWithSpans] = useState([]);
     const [viewType, setViewType] = useState(null);
+    const { eyebrowsWithSpans, headingWithSpans } = useEyebrowHeadingAnimation(
+        eyebrow,
+        heading
+    );
 
     const calculateDelayWGridColumns = (index, viewType) => {
         let numColumns;
@@ -121,48 +124,6 @@ export default function CardShowcase({ eyebrow, heading, cards }) {
     };
 
     useEffect(() => {
-        const eyebrowText = eyebrow;
-        const eyebrowWords = eyebrowText.split(' ');
-
-        // I know i can consolidate this into a function...
-        const eyebrowsWithSpans = eyebrowWords.map((word, index) => (
-            <motion.span
-                className='eyebrow'
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, amount: 1 }}
-                viewport={{ once: true, amount: 1 }}
-                transition={{ duration: 1, delay: index * 0.15 }}
-                key={index}
-            >
-                {word}
-                {index !== eyebrowWords.length - 1 ? '\u2002' : ''}
-            </motion.span>
-        ));
-        setEyebrowsWithSpans(eyebrowsWithSpans);
-
-        let startDelay = eyebrowWords.length;
-
-        const headingText = heading;
-        const headingWords = headingText.split(' ');
-
-        const headingWordsWithSpans = headingWords.map((word, index) => (
-            <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, amount: 1 }}
-                viewport={{ once: true, amount: 1 }}
-                transition={{
-                    duration: 1,
-                    delay: (startDelay + index) * 0.15,
-                }}
-                key={index}
-            >
-                {word}
-                {index !== headingWords.length - 1 ? ' ' : ''}
-            </motion.span>
-        ));
-        // Set the state to trigger a re-render with the updated content
-        setHeadingWithSpans(headingWordsWithSpans);
-
         // Used for assisting in column delays for framer animations
         const windowWidth = window.innerWidth;
         if (windowWidth >= desktopWidthInt) {
@@ -186,7 +147,7 @@ export default function CardShowcase({ eyebrow, heading, cards }) {
     return (
         <Container id='skills'>
             <InnerContainer>
-                <Heading id='heading'>
+                <Heading>
                     {eyebrowsWithSpans}
                     <br />
                     {headingWithSpans}

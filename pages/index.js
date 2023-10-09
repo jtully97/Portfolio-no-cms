@@ -26,7 +26,10 @@ export default function Home() {
                     heading={landingPageData.showcase.heading}
                     cards={landingPageData.showcase.cards}
                 />
-                <ProjectShowcase />
+                <ProjectShowcase
+                    eyebrow={landingPageData.projectShowcase.eyebrow}
+                    heading={landingPageData.projectShowcase.heading}
+                />
             </main>
         </>
     );

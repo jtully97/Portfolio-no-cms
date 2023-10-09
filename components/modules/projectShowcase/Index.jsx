@@ -2,20 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container as ContainerStyles, MediaQueries } from '@/styles/Utilities';
 import { variables } from '@/styles/Variables';
+import { h2styles, eyebrow } from '@/styles/Type';
+import useEyebrowHeadingAnimation from '@/customHooks/useEyebrowHeadingAnimation';
 
 const Container = styled.section`
+    height: 2000px;
+    width: 100%;
+    position: relative;
+    padding: 124px 0px;
+
+    @media ${MediaQueries.tablet} {
+        background-size: 600px;
+    }
+`;
+
+const BackgroundImage = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     background-image: url('/decorative/brick-tiled-min.jpg');
     filter: brightness(35%);
     background-repeat: repeat;
     background-size: 800px;
     background-position: center center;
-    height: 2000px;
-    width: 100%;
-    position: relative;
-
-    @media ${MediaQueries.tablet} {
-        background-size: 600px;
-    }
 
     // Whole opaque overlay
     &::after {
@@ -49,12 +60,34 @@ const Container = styled.section`
 
 const InnerContainer = styled.div`
     ${ContainerStyles}
+    position: relative;
+    z-index: 3;
 `;
 
-export default function ProjectShowcase() {
+const Heading = styled.h2`
+    ${h2styles}
+    text-align: center;
+
+    .eyebrow {
+        ${eyebrow}
+    }
+`;
+
+export default function ProjectShowcase({ eyebrow, heading }) {
+    const { eyebrowsWithSpans, headingWithSpans } = useEyebrowHeadingAnimation(
+        eyebrow,
+        heading
+    );
     return (
         <Container>
-            <InnerContainer>show</InnerContainer>
+            <BackgroundImage />
+            <InnerContainer>
+                <Heading>
+                    {eyebrowsWithSpans}
+                    <br />
+                    {headingWithSpans}
+                </Heading>
+            </InnerContainer>
         </Container>
     );
 }
