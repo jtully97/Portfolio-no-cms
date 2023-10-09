@@ -17,10 +17,7 @@ const Container = styled.section`
         background-size: 600px;
     }
 
-    @media ${MediaQueries.mobile} {
-        background-size: 500px;
-    }
-
+    // Whole opaque overlay
     &::after {
         content: '';
         position: absolute;
@@ -32,6 +29,7 @@ const Container = styled.section`
         z-index: 1;
     }
 
+    // Top to bottom overlay
     &::before {
         content: '';
         width: 100%;
