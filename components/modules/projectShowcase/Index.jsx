@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container as ContainerStyles } from '@/styles/Utilities';
+import { Container as ContainerStyles, MediaQueries } from '@/styles/Utilities';
 import { variables } from '@/styles/Variables';
 
 const Container = styled.section`
@@ -12,6 +12,14 @@ const Container = styled.section`
     height: 2000px;
     width: 100%;
     position: relative;
+
+    @media ${MediaQueries.tablet} {
+        background-size: 600px;
+    }
+
+    @media ${MediaQueries.mobile} {
+        background-size: 400px;
+    }
 
     &::after {
         content: '';
