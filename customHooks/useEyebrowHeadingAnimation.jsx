@@ -32,7 +32,7 @@ function useEyebrowHeadingAnimation(eyebrow, heading) {
         const animatedHeading = animateText(heading);
         setHeadingWithSpans(animatedHeading);
 
-        startDelay += heading.split(' ').length;
+        // startDelay += heading.split(' ').length;
 
         // Return a cleanup function if needed
         return () => {
