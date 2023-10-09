@@ -6,10 +6,14 @@ import { h2styles, eyebrow } from '@/styles/Type';
 import { motion } from 'framer-motion';
 import Card from './components/Card';
 import { glow } from '../mainHero.jsx/Index';
+import { desktopWidthInt, tabletWidthInt } from '@/styles/Variables';
 
-const customSmallTablet = '(max-width: 772px)';
+const customSmallTabletInt = 772;
+const customXSTabletInt = 646;
 
-const customXSTablet = '(max-width: 646px)';
+const customSmallTablet = `(max-width: ${customSmallTabletInt}px)`;
+
+const customXSTablet = `(max-width: ${customXSTabletInt}px)`;
 
 const Container = styled.section`
     background-color: ${variables.color2};
@@ -81,6 +85,29 @@ const StyledCard = styled(Card)`
 export default function CardShowcase({ eyebrow, heading, cards }) {
     const [headingWithSpans, setHeadingWithSpans] = useState([]);
     const [eyebrowsWithSpans, setEyebrowsWithSpans] = useState([]);
+    const [viewType, setViewType] = useState(null);
+
+    const calculateDelay = (index, viewType) => {
+        let numColumns;
+
+        switch (viewType) {
+            case 'desktop':
+                numColumns = 5;
+                break;
+            case 'tablet':
+                numColumns = 4;
+                break;
+            case 'customSmallTablet':
+                numColumns = 3;
+                break;
+            case 'mobile':
+            default:
+                numColumns = 2;
+        }
+
+        // Calculate the delay based on the number of columns and the index
+        return (index % numColumns) * 0.15;
+    };
 
     useEffect(() => {
         const eyebrowText = eyebrow;
@@ -124,6 +151,18 @@ export default function CardShowcase({ eyebrow, heading, cards }) {
         ));
         // Set the state to trigger a re-render with the updated content
         setHeadingWithSpans(headingWordsWithSpans);
+
+        // Used for assisting in column delays for framer animations
+        const windowWidth = window.innerWidth;
+        if (windowWidth >= desktopWidthInt) {
+            setViewType('desktop');
+        } else if (windowWidth >= tabletWidthInt) {
+            setViewType('tablet');
+        } else if (windowWidth >= customSmallTabletInt) {
+            setViewType('customSmallTablet');
+        } else {
+            setViewType('mobile');
+        }
     }, []);
 
     const sharedMotionProps = {
@@ -145,7 +184,7 @@ export default function CardShowcase({ eyebrow, heading, cards }) {
                     {cards?.map((card, index) => {
                         const { img, skill } = card;
                         // Calculate the delay based on the index (adjust the multiplier as needed)
-                        const delay = index * 0.15; // Adjust the multiplier to control delay
+                        const delay = calculateDelay(index, viewType); // Adjust the multiplier to control delay
 
                         const cardMotionProps = {
                             ...sharedMotionProps,
