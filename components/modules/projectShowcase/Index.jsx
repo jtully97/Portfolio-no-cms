@@ -66,6 +66,7 @@ const InnerContainer = styled.div`
 
 const Heading = styled.h2`
     ${h2styles}
+    display: inline-block;
 
     .eyebrow {
         ${eyebrow}
@@ -78,7 +79,7 @@ export default function ProjectShowcase({ eyebrow, heading }) {
         heading
     );
     return (
-        <Container>
+        <Container id='projects'>
             <BackgroundImage />
             <InnerContainer>
                 <Heading>
