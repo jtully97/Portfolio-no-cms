@@ -18,7 +18,7 @@ const Container = styled.section`
     }
 
     @media ${MediaQueries.mobile} {
-        background-size: 400px;
+        background-size: 500px;
     }
 
     &::after {
