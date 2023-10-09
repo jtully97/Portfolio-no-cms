@@ -66,7 +66,6 @@ const InnerContainer = styled.div`
 
 const Heading = styled.h2`
     ${h2styles}
-    text-align: center;
 
     .eyebrow {
         ${eyebrow}
