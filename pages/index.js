@@ -29,6 +29,7 @@ export default function Home() {
                 <ProjectShowcase
                     eyebrow={landingPageData.projectShowcase.eyebrow}
                     heading={landingPageData.projectShowcase.heading}
+                    projects={landingPageData.projectShowcase.projects}
                 />
             </main>
         </>

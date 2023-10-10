@@ -141,7 +141,24 @@ export const landingPageData = {
         ],
     },
     projectShowcase: {
+        //Images 1202 x 897px
         eyebrow: 'now showing',
         heading: 'Some of My Projects',
+        projects: [
+            {
+                title: 'Beggars Pizza',
+                img: {
+                    src: '/projects/beggars-poster.png',
+                    alt: 'beggars pizza home page',
+                },
+            },
+            {
+                title: 'SafeCare Corp',
+                img: {
+                    src: '/projects/safecare-poster.png',
+                    alt: 'safecare home page',
+                },
+            },
+        ],
     },
 };

@@ -16,6 +16,20 @@ const lato = `'Lato', sans-serif`;
 const merriweather = `'Merriweather', sans`;
 const pacifico = 'Pacifico, sans-serif';
 export const neonderthaw = 'Neonderthaw, cursive';
+export const limelight = 'Limelight, sans-serif';
+
+export const posterType = css`
+    font-family: ${limelight};
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 400;
+    color: #000;
+
+    @media ${MediaQueries.mobile} {
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+`;
 
 export const eyebrow = css`
     font-family: ${neonderthaw};
@@ -34,7 +48,7 @@ export const eyebrow = css`
     }
 
     @media ${MediaQueries.mobile} {
-        font-size: 2.6rem;
+        font-size: 3rem;
         line-height: 2rem;
     }
 `;

@@ -14,7 +14,7 @@ function useEyebrowHeadingAnimation(eyebrow, heading) {
                     className={toggleEyebrowClass && 'eyebrow'}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1, amount: 1 }}
-                    viewport={{ once: true, amount: 1 }}
+                    viewport={{ amount: 1 }}
                     transition={{ duration: 1, delay: index * 0.15 }}
                     key={index}
                 >

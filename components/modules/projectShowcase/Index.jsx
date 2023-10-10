@@ -4,6 +4,7 @@ import { Container as ContainerStyles, MediaQueries } from '@/styles/Utilities';
 import { variables } from '@/styles/Variables';
 import { h2styles, eyebrow } from '@/styles/Type';
 import useEyebrowHeadingAnimation from '@/customHooks/useEyebrowHeadingAnimation';
+import Poster from './components/Poster';
 
 const Container = styled.section`
     height: 2000px;
@@ -66,18 +67,36 @@ const InnerContainer = styled.div`
 
 const Heading = styled.h2`
     ${h2styles}
-    display: inline-block;
+    display: inline;
 
     .eyebrow {
         ${eyebrow}
     }
 `;
 
-export default function ProjectShowcase({ eyebrow, heading }) {
+const ProjectsGridContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 88px;
+    gap: 24px;
+    justify-items: center;
+
+    @media ${MediaQueries.mobile} {
+        grid-template-columns: 1fr;
+        gap: 54px;
+    }
+`;
+
+const StyledPoster = styled(Poster)`
+    max-width: 335px;
+`;
+
+export default function ProjectShowcase({ eyebrow, heading, projects }) {
     const { eyebrowsWithSpans, headingWithSpans } = useEyebrowHeadingAnimation(
         eyebrow,
         heading
     );
+
     return (
         <Container id='projects'>
             <BackgroundImage />
@@ -87,6 +106,17 @@ export default function ProjectShowcase({ eyebrow, heading }) {
                     <br />
                     {headingWithSpans}
                 </Heading>
+                <ProjectsGridContainer>
+                    {projects.map((project, index) => {
+                        return (
+                            <StyledPoster
+                                img={project.img}
+                                title={project.title}
+                                key={index}
+                            />
+                        );
+                    })}
+                </ProjectsGridContainer>
             </InnerContainer>
         </Container>
     );
