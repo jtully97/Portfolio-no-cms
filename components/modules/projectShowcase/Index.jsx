@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Container as ContainerStyles, MediaQueries } from '@/styles/Utilities';
 import { variables } from '@/styles/Variables';
 import { h2styles, eyebrow } from '@/styles/Type';
 import useEyebrowHeadingAnimation from '@/customHooks/useEyebrowHeadingAnimation';
 import Poster from './components/Poster';
+import { motion } from 'framer-motion';
 
 const Container = styled.section`
     height: 2000px;
@@ -92,10 +93,52 @@ const StyledPoster = styled(Poster)`
 `;
 
 export default function ProjectShowcase({ eyebrow, heading, projects }) {
-    const { eyebrowsWithSpans, headingWithSpans } = useEyebrowHeadingAnimation(
-        eyebrow,
-        heading
-    );
+    const [headingWithSpans, setHeadingWithSpans] = useState(null);
+    const [eyebrowsWithSpans, setEyebrowsWithSpans] = useState(null);
+
+    useEffect(() => {
+        const eyebrowText = eyebrow;
+        const eyebrowWords = eyebrowText.split(' ');
+
+        // I know i can consolidate this into a function...
+        const eyebrowsWithSpans = eyebrowWords.map((word, index) => (
+            <motion.span
+                className='eyebrow'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, amount: 1 }}
+                viewport={{ once: true, amount: 1 }}
+                transition={{ duration: 1, delay: index * 0.15 }}
+                key={index}
+            >
+                {word}
+                {index !== eyebrowWords.length - 1 ? '\u2002' : ''}
+            </motion.span>
+        ));
+        setEyebrowsWithSpans(eyebrowsWithSpans);
+
+        let startDelay = eyebrowWords.length;
+
+        const headingText = heading;
+        const headingWords = headingText.split(' ');
+
+        const headingWordsWithSpans = headingWords.map((word, index) => (
+            <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, amount: 1 }}
+                viewport={{ once: true, amount: 1 }}
+                transition={{
+                    duration: 1,
+                    delay: (startDelay + index) * 0.15,
+                }}
+                key={index}
+            >
+                {word}
+                {index !== headingWords.length - 1 ? ' ' : ''}
+            </motion.span>
+        ));
+        // Set the state to trigger a re-render with the updated content
+        setHeadingWithSpans(headingWordsWithSpans);
+    }, []);
 
     return (
         <Container id='projects'>
