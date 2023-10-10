@@ -10,9 +10,9 @@ const Container = styled.div`
     box-shadow:
         0 0 3.2px #fff,
         0 0 3.2px #fff,
-        0 0 32px #00d9ff,
+        0 0 20px #00d9ff,
         0 0 12px #00d9ff,
-        0 0 24px #00d9ff,
+        0 0 18px #00d9ff,
         inset 0 0 20.8px #00d9ff;
     position: relative;
     display: flex;

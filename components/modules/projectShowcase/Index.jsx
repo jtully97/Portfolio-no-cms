@@ -97,6 +97,7 @@ export default function ProjectShowcase({ eyebrow, heading, projects }) {
     const [eyebrowsWithSpans, setEyebrowsWithSpans] = useState(null);
 
     useEffect(() => {
+        //TODO: figure out why the reusable hook for this does not work on my iphone for the last span in the heading on my phone specifically
         const eyebrowText = eyebrow;
         const eyebrowWords = eyebrowText.split(' ');
 
@@ -106,7 +107,7 @@ export default function ProjectShowcase({ eyebrow, heading, projects }) {
                 className='eyebrow'
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, amount: 1 }}
-                viewport={{ once: true, amount: 1 }}
+                viewport={{ amount: 1 }}
                 transition={{ duration: 1, delay: index * 0.15 }}
                 key={index}
             >
