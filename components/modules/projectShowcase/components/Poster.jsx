@@ -7,13 +7,13 @@ import { posterType } from '@/styles/Type';
 const Container = styled.div`
     border: 18px solid #000;
     border-radius: 8px;
-    box-shadow:
+    /* box-shadow:
         0 0 3.2px #fff,
         0 0 3.2px #fff,
         0 0 20px #00d9ff,
         0 0 12px #00d9ff,
         0 0 3px #00d9ff,
-        inset 0 0 12.8px #00d9ff;
+        inset 0 0 12.8px #00d9ff; */
     position: relative;
     display: flex;
     flex-wrap: wrap;
