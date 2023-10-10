@@ -149,7 +149,7 @@ export default function CardShowcase({ eyebrow, heading, cards }) {
             <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, amount: 1 }}
-                viewport={{ once: true, amount: 1 }}
+                viewport={{ amount: 1 }}
                 transition={{
                     duration: 1,
                     delay: (startDelay + index) * 0.15,
