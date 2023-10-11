@@ -153,6 +153,20 @@ export const landingPageData = {
                 },
             },
             {
+                title: 'MJ Schuetz Insurance',
+                img: {
+                    src: '/projects/MJ-insurance-agency.png',
+                    alt: 'MJ Schuetz Insurance home page',
+                },
+            },
+            {
+                title: 'C4 Chicago',
+                img: {
+                    src: '/projects/C4-Chi.png',
+                    alt: 'C4 Chicago home page',
+                },
+            },
+            {
                 title: 'SafeCare Corp',
                 img: {
                     src: '/projects/safecare-poster.png',
@@ -160,17 +174,24 @@ export const landingPageData = {
                 },
             },
             {
-                title: 'Beggars Pizza',
+                title: 'Chicago Living Group',
                 img: {
-                    src: '/projects/beggars-poster.png',
-                    alt: 'beggars pizza home page',
+                    src: '/projects/chicago-living.png',
+                    alt: 'Chicago Living Group home page',
                 },
             },
             {
-                title: 'SafeCare Corp',
+                title: 'Tulayna Limo Service',
                 img: {
-                    src: '/projects/safecare-poster.png',
-                    alt: 'safecare home page',
+                    src: '/projects/tulayna-limo-service.png',
+                    alt: 'Tulayna Limo Service home page',
+                },
+            },
+            {
+                title: 'Townsend Tree Services',
+                img: {
+                    src: '/projects/townsend-tree-services.png',
+                    alt: 'Townsend Tree Services home page',
                 },
             },
         ],

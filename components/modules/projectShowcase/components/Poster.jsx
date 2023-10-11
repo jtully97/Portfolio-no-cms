@@ -9,23 +9,12 @@ import { useInView } from 'framer-motion';
 const Container = styled.div`
     border: 18px solid #000;
     border-radius: 8px;
-    /* box-shadow:
-        0 0 3.2px #fff,
-        0 0 3.2px #fff,
-        0 0 20px #00d9ff,
-        0 0 12px #00d9ff,
-        0 0 3px #00d9ff,
-        inset 0 0 12.8px #00d9ff; */
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
 `;
 
 const ImageWrapper = styled.div`
     position: relative;
     overflow: hidden;
+    height: 100%;
 `;
 
 const Curtains = styled.div`
@@ -35,15 +24,14 @@ const Curtains = styled.div`
     right: 0;
     bottom: 0;
     z-index: 1;
-    width: 135%;
-    transform: translate(-13%);
+    width: 145%;
+    transform: translate(-15.5%);
 `;
 
 const StyledImage = styled(Image)`
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    position: relative;
+    height: 100%;
+    object-fit: cover;
 `;
 
 export default function Poster({ className, img, title, description }) {
@@ -55,12 +43,17 @@ export default function Poster({ className, img, title, description }) {
         loop: false,
         autoplay: false,
     };
-    const { View: curtainLottie, setSpeed, play } = useLottie(curtainOptions);
-    setSpeed(0.6);
+    const {
+        View: curtainLottie,
+        setSpeed,
+        play: openCurtains,
+    } = useLottie(curtainOptions);
 
     useEffect(() => {
+        setSpeed(0.5);
+
         if (isInView) {
-            play();
+            openCurtains();
         }
     }, [isInView]);
 
