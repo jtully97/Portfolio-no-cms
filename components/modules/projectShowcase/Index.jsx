@@ -82,6 +82,11 @@ const ProjectsGridContainer = styled.div`
     gap: 24px;
     justify-items: center;
 
+    @media ${MediaQueries.tablet} {
+        grid-template-columns: repeat(3, auto);
+        gap: 28px;
+    }
+
     @media ${MediaQueries.mobile} {
         grid-template-columns: 1fr;
         gap: 54px;
