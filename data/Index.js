@@ -159,6 +159,20 @@ export const landingPageData = {
                     alt: 'safecare home page',
                 },
             },
+            {
+                title: 'Beggars Pizza',
+                img: {
+                    src: '/projects/beggars-poster.png',
+                    alt: 'beggars pizza home page',
+                },
+            },
+            {
+                title: 'SafeCare Corp',
+                img: {
+                    src: '/projects/safecare-poster.png',
+                    alt: 'safecare home page',
+                },
+            },
         ],
     },
 };

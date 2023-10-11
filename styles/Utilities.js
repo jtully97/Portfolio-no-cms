@@ -4,7 +4,7 @@ import {
     mobileWidthInt,
     tabletWidthInt2,
 } from './Variables';
-import { css } from 'styled-components';
+import { css, keyframes } from 'styled-components';
 
 export const MediaQueries = {
     desktop: `(min-width: ${desktopWidthInt}px)`,
@@ -45,4 +45,29 @@ export const GlassEffect = css`
 export const BlurEffect = css`
     backdrop-filter: grayscale(0) blur(10px);
     box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0.08);
+`;
+
+export const shake = keyframes`
+   
+        10%,
+        90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+
+        20%,
+        80% {
+            transform: translate3d(2px, 0, 0);
+        }
+
+        30%,
+        50%,
+        70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+
+        40%,
+        60% {
+            transform: translate3d(4px, 0, 0);
+        }
+    
 `;

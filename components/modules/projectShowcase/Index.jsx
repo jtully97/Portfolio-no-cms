@@ -77,7 +77,7 @@ const Heading = styled.h2`
 
 const ProjectsGridContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
     margin-top: 88px;
     gap: 24px;
     justify-items: center;
@@ -89,7 +89,7 @@ const ProjectsGridContainer = styled.div`
 `;
 
 const StyledPoster = styled(Poster)`
-    max-width: 335px;
+    max-width: 480px;
 `;
 
 export default function ProjectShowcase({ eyebrow, heading, projects }) {
