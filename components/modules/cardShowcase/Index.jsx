@@ -8,11 +8,6 @@ import Card from './components/Card';
 import { glow } from '../mainHero.jsx/Index';
 import { desktopWidthInt, tabletWidthInt } from '@/styles/Variables';
 
-const customSmallTabletInt = 772;
-const customXSTabletInt = 646;
-const customSmallTablet = `(max-width: ${customSmallTabletInt}px)`;
-const customXSTablet = `(max-width: ${customXSTabletInt}px)`;
-
 const Container = styled.section`
     background-color: ${variables.color2};
     padding: 224px 0px;
@@ -78,12 +73,12 @@ const GridSection = styled.div`
         margin-top: 40px;
     }
 
-    @media ${customSmallTablet} {
+    @media ${MediaQueries.customSmallTablet} {
         grid-template-columns: repeat(3, 1fr);
         gap: 30px 24px;
     }
 
-    @media ${customXSTablet} {
+    @media ${MediaQueries.customXSTablet} {
         grid-template-columns: repeat(2, 1fr);
     }
 `;

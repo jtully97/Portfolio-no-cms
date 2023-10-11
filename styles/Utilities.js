@@ -1,8 +1,9 @@
 import {
     variables,
     desktopWidthInt,
+    customSmallTabletInt,
+    customXSTabletInt,
     mobileWidthInt,
-    tabletWidthInt2,
 } from './Variables';
 import { css, keyframes } from 'styled-components';
 
@@ -12,8 +13,9 @@ export const MediaQueries = {
     tabletOnly: `(max-width: ${desktopWidthInt - 1}px) and (min-width: ${
         mobileWidthInt + 1
     }px)`,
+    customSmallTablet: `(max-width: ${customSmallTabletInt}px)`,
+    customXSTablet: `(max-width: ${customXSTabletInt}px)`,
     mobile: `(max-width: ${mobileWidthInt}px)`,
-    tablet2: `(max-width: ${tabletWidthInt2}px)`,
 };
 
 export const Container = css`

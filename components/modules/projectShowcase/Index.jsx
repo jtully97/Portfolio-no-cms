@@ -87,7 +87,11 @@ const ProjectsGridContainer = styled.div`
         gap: 28px;
     }
 
-    @media ${MediaQueries.mobile} {
+    @media ${MediaQueries.customSmallTablet} {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    @media ${MediaQueries.customXSTablet} {
         grid-template-columns: 1fr;
         gap: 54px;
     }
