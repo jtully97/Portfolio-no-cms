@@ -8,8 +8,8 @@ import Poster from './components/Poster';
 import { motion } from 'framer-motion';
 
 const Container = styled.section`
-    height: 2000px;
     width: 100%;
+    min-height: 2000px;
     position: relative;
     padding: 124px 0px;
 
