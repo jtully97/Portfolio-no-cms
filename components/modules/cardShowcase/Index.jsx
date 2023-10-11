@@ -6,7 +6,11 @@ import { h2styles, eyebrow } from '@/styles/Type';
 import { motion } from 'framer-motion';
 import Card from './components/Card';
 import { glow } from '../mainHero.jsx/Index';
-import { desktopWidthInt, tabletWidthInt } from '@/styles/Variables';
+import {
+    desktopWidthInt,
+    tabletWidthInt,
+    customSmallTabletInt,
+} from '@/styles/Variables';
 
 const Container = styled.section`
     background-color: ${variables.color2};
