@@ -22,6 +22,7 @@ const Container = styled(motion.div)`
         height: 100%;
         background: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         position: absolute;
         top: 0;
         left: 0;
