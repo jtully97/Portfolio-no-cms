@@ -2,15 +2,20 @@ import { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { variables } from '@/styles/Variables';
-import curtainOpenLottie from './../lottie/curtainOpenLottie.json';
+import curtainOpenLottie from './lottie/curtainOpenLottie.json';
 import { useLottie } from 'lottie-react';
 import { useInView } from 'framer-motion';
 import InfoIcon from '/public/svg/InfoIcon.svg';
+import Modal from './modal/Index';
 
-const Container = styled.div`
+const Container = styled.div``;
+
+const InnerContainer = styled.div`
     border: 18px solid #000;
     border-radius: 8px;
     position: relative;
+    width: 100%;
+    height: 100%;
 `;
 
 const ModalButton = styled.button`
@@ -71,6 +76,7 @@ export default function Poster({ className, img, title, description }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { amount: 1 });
     const [modalButtonVisible, setModalButtonVisible] = useState(false);
+    const [modalActive, setModalActive] = useState(false);
 
     const curtainOptions = {
         animationData: curtainOpenLottie,
@@ -92,23 +98,30 @@ export default function Poster({ className, img, title, description }) {
         }
     }, [isInView]);
 
+    const ActivateModal = () => {
+        setModalActive(true);
+    };
+
     return (
         <Container className={className} id='container' ref={ref}>
-            <ImageWrapper>
-                <StyledImage
-                    src={img.src}
-                    alt={img.alt}
-                    width={601}
-                    height={448.5}
-                />
-                <Curtains>{curtainLottie}</Curtains>
-            </ImageWrapper>
-            <ModalButton
-                $visible={modalButtonVisible}
-                onClick={() => window.alert('boooo ya')}
-            >
-                <InfoIcon />
-            </ModalButton>
+            <InnerContainer>
+                <ImageWrapper>
+                    <StyledImage
+                        src={img.src}
+                        alt={img.alt}
+                        width={601}
+                        height={448.5}
+                    />
+                    <Curtains>{curtainLottie}</Curtains>
+                </ImageWrapper>
+                <ModalButton
+                    $visible={modalButtonVisible}
+                    onClick={ActivateModal}
+                >
+                    <InfoIcon />
+                </ModalButton>
+            </InnerContainer>
+            <Modal isVisible={modalActive} setModalActive={setModalActive} />
         </Container>
     );
 }

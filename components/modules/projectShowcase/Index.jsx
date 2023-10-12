@@ -4,7 +4,7 @@ import { Container as ContainerStyles, MediaQueries } from '@/styles/Utilities';
 import { variables } from '@/styles/Variables';
 import { h2styles, eyebrow } from '@/styles/Type';
 import useEyebrowHeadingAnimation from '@/customHooks/useEyebrowHeadingAnimation';
-import Poster from './components/Poster';
+import Poster from './components/poster/Index';
 import { motion } from 'framer-motion';
 
 const Container = styled.section`
@@ -63,7 +63,6 @@ const BackgroundImage = styled.div`
 const InnerContainer = styled.div`
     ${ContainerStyles}
     position: relative;
-    z-index: 3;
 `;
 
 const Heading = styled.h2`

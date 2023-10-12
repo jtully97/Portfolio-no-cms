@@ -3,12 +3,12 @@ import Link from 'next/link';
 import ExpandingButton from '@/components/ui/expandingButton/Index';
 import { pBase } from '@/styles/Type';
 import { variables } from '@/styles/Variables';
-import { MediaQueries } from '@/styles/Utilities';
 
 const StyledExpandingButton = styled(ExpandingButton)`
     position: fixed;
     right: 25px;
     top: 25px;
+    z-index: 10;
 `;
 
 const Nav = styled.nav`
