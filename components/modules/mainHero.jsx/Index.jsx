@@ -13,7 +13,6 @@ import {
     useSpring,
 } from 'framer-motion';
 import { h1styles } from '@/styles/Type';
-import { glow } from '@/styles/Type';
 
 const Section = styled.section`
     background-color: ${variables.color2};

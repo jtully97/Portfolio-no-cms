@@ -5,11 +5,21 @@ import { keyframes } from 'styled-components';
 export const glow = keyframes`    
         from {
             text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
-        }
-  
+     }
+        
          to {
              text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
         }
+`;
+
+export const glowMobile = keyframes`
+    from {
+        text-shadow: 0 0 3.5px #fff, 0 0 4.2px #fff, 0 0 5.25px #0008e6, 0 0 6.3px #0008e6, 0 0 70px #0008e6, 0 0 8.05px #0008e6, 0 0 9.1px #0008e6;
+    }
+
+    to {
+        text-shadow: 0 0 4.2px #fff, 0 0 4.9px #00d9ff, 0 0 7.8px #00d9ff, 0 0 6.3px #00d9ff, 0 0 7.8px #00d9ff, 0 0 8.8px #00d9ff, 0 0 9.6px #00d9ff;
+    }
 `;
 
 const lato = `'Lato', sans-serif`;
@@ -43,13 +53,18 @@ export const eyebrow = css`
     color: #ffff;
 
     @media ${MediaQueries.tablet} {
-        font-size: 2.9rem;
-        line-height: 2.4rem;
+        font-size: 3.7rem;
+        line-height: 3rem;
     }
 
     @media ${MediaQueries.mobile} {
-        font-size: 3rem;
+        font-size: 3.2rem;
         line-height: 2rem;
+        font-weight: 100;
+        -webkit-animation: ${glowMobile} 1s ease-in-out alternate;
+        -moz-animation: ${glowMobile} 1s ease-in-out alternate;
+        animation: ${glowMobile} 1s ease-in-out alternate;
+        animation-fill-mode: forwards;
     }
 `;
 

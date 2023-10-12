@@ -5,7 +5,6 @@ import { variables } from '@/styles/Variables';
 import { h2styles, eyebrow } from '@/styles/Type';
 import { motion } from 'framer-motion';
 import Card from './components/Card';
-import { glow } from '../mainHero.jsx/Index';
 import {
     desktopWidthInt,
     tabletWidthInt,
