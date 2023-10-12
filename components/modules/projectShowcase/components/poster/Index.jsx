@@ -43,6 +43,14 @@ const ModalButton = styled.button`
         bottom: 0;
         z-index: -1;
         border-radius: 18px 0 0 0;
+        transition: background ease-out 0.3s;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            background: rgba(255, 255, 255, 0.7);
+        }
     }
 
     svg {
