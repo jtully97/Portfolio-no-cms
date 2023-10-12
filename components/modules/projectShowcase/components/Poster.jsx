@@ -14,18 +14,33 @@ const Container = styled.div`
 `;
 
 const ModalButton = styled.button`
-    background-color: #000;
-    background: rgba(255, 255, 255, 0.1);
-    /* opacity: 0.5; */
-    backdrop-filter: blur(10px);
+    background-color: unset;
     border: unset;
-    padding: 4px 0 0 4px;
-    border-radius: 18px 0 0 0;
+    padding: 24px 0 0 24px;
     position: absolute;
     right: 0;
     bottom: 0;
     cursor: pointer;
-    z-index: 10;
+    z-index: ${(props) => (props.$visible ? 2 : 0)};
+    opacity: ${(props) => (props.$visible ? 1 : 0)};
+    transition: opacity ease-out 1.2s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 60%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        border-radius: 18px 0 0 0;
+    }
+
+    svg {
+        margin-top: 3px;
+    }
 `;
 
 const ImageWrapper = styled.div`
@@ -54,6 +69,7 @@ const StyledImage = styled(Image)`
 export default function Poster({ className, img, title, description }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { amount: 1 });
+    const [modalButtonVisible, setModalButtonVisible] = useState(false);
 
     const curtainOptions = {
         animationData: curtainOpenLottie,
@@ -71,6 +87,7 @@ export default function Poster({ className, img, title, description }) {
 
         if (isInView) {
             openCurtains();
+            setTimeout(() => setModalButtonVisible(true), 1000);
         }
     }, [isInView]);
 
@@ -85,7 +102,10 @@ export default function Poster({ className, img, title, description }) {
                 />
                 <Curtains>{curtainLottie}</Curtains>
             </ImageWrapper>
-            <ModalButton>
+            <ModalButton
+                $visible={modalButtonVisible}
+                onClick={() => window.alert('boooo ya')}
+            >
                 <InfoIcon />
             </ModalButton>
         </Container>
