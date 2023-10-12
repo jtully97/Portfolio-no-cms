@@ -2,8 +2,9 @@ import styled, { keyframes } from 'styled-components';
 import { variables } from '@/styles/Variables';
 import { useEffect, useState } from 'react';
 import Close from '@/components/svg/close/Index';
-import { neonderthaw } from '@/styles/Type';
+import { glowMobile, neonderthaw } from '@/styles/Type';
 import { glow } from '@/styles/Type';
+import { MediaQueries } from '@/styles/Utilities';
 
 const Container = styled.div`
     z-index: 10;
@@ -68,6 +69,14 @@ const ExpandButton = styled.button`
         animation-fill-mode: forwards;
         display: block;
         margin-bottom: 8px;
+
+        @media ${MediaQueries.mobile} {
+            font-weight: 100;
+            -webkit-animation: ${glowMobile} 0.4s ease-in-out alternate;
+            -moz-animation: ${glowMobile} 0.4s ease-in-out alternate;
+            animation: ${glowMobile} 0.4s ease-in-out alternate;
+            animation-fill-mode: forwards;
+        }
     }
 `;
 

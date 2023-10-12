@@ -4,7 +4,6 @@ import { MediaQueries } from '@/styles/Utilities';
 import { variables } from '@/styles/Variables';
 import { Container } from '@/styles/Utilities';
 import { pLarge, eyebrow } from '@/styles/Type';
-import { GlassEffect } from '@/styles/Utilities';
 import {
     motion,
     useAnimationControls,

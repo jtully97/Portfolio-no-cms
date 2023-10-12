@@ -77,7 +77,7 @@ const Heading = styled.h2`
 
 const ProjectsGridContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     margin-top: 88px;
     gap: 24px;
     justify-items: center;

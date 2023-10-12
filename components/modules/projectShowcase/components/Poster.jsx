@@ -1,14 +1,31 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { variables } from '@/styles/Variables';
 import curtainOpenLottie from './../lottie/curtainOpenLottie.json';
-import { useLottie, useLottieInteractivity } from 'lottie-react';
+import { useLottie } from 'lottie-react';
 import { useInView } from 'framer-motion';
+import InfoIcon from '/public/svg/InfoIcon.svg';
 
 const Container = styled.div`
     border: 18px solid #000;
     border-radius: 8px;
+    position: relative;
+`;
+
+const ModalButton = styled.button`
+    background-color: #000;
+    background: rgba(255, 255, 255, 0.1);
+    /* opacity: 0.5; */
+    backdrop-filter: blur(10px);
+    border: unset;
+    padding: 4px 0 0 4px;
+    border-radius: 18px 0 0 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 10;
 `;
 
 const ImageWrapper = styled.div`
@@ -68,6 +85,9 @@ export default function Poster({ className, img, title, description }) {
                 />
                 <Curtains>{curtainLottie}</Curtains>
             </ImageWrapper>
+            <ModalButton>
+                <InfoIcon />
+            </ModalButton>
         </Container>
     );
 }
