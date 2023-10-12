@@ -30,8 +30,9 @@ const ModalButton = styled.button`
         position: absolute;
         width: 60%;
         height: 60%;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         right: 0;
         bottom: 0;
         z-index: -1;
@@ -87,7 +88,7 @@ export default function Poster({ className, img, title, description }) {
 
         if (isInView) {
             openCurtains();
-            setTimeout(() => setModalButtonVisible(true), 1000);
+            setTimeout(() => setModalButtonVisible(true), 1500);
         }
     }, [isInView]);
 
