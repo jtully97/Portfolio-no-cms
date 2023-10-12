@@ -24,7 +24,7 @@ const ModalContainer = styled(motion.div)`
         height: 100%;
         z-index: 0;
         background: #000;
-        opacity: 0.4;
+        opacity: 0.6;
     }
 `;
 
