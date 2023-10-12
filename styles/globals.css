@@ -83,7 +83,6 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -106,11 +105,6 @@ body {
 a {
     color: inherit;
     text-decoration: none;
-}
-
-button:focus {
-    outline: 0;
-    -webkit-tap-highlight-color: transparent; /* Remove the tap highlight */
 }
 
 @media (prefers-color-scheme: dark) {

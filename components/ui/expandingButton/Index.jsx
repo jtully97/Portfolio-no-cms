@@ -23,6 +23,13 @@ const Container = styled.div`
     transform: ${(props) =>
         props.$active ? 'rotate(0deg)' : 'rotate(-15deg)'};
     border: 2px solid ${variables.color4};
+
+    > * {
+        &:focus {
+            outline: 0;
+            -webkit-tap-highlight-color: transparent; /* Remove the tap highlight */
+        }
+    }
 `;
 
 const InnerContainer = styled.div`

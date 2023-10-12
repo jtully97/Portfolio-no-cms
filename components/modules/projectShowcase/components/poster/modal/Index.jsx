@@ -30,7 +30,10 @@ const CloseModal = styled.button`
     width: 20px;
     height: 20px;
     z-index: 100;
-    position: relative;
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    cursor: pointer;
 `;
 
 export default function Modal({ isVisible, setModalActive }) {
