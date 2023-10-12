@@ -29,6 +29,7 @@ const ModalButton = styled.button`
     z-index: ${(props) => (props.$visible ? 2 : 0)};
     opacity: ${(props) => (props.$visible ? 1 : 0)};
     transition: opacity ease-out 1.2s;
+    border-radius: 18px 0 0 0;
 
     &::before {
         content: '';

@@ -23,13 +23,6 @@ const Container = styled.div`
     transform: ${(props) =>
         props.$active ? 'rotate(0deg)' : 'rotate(-15deg)'};
     border: 2px solid ${variables.color4};
-
-    > * {
-        &:focus {
-            outline: 0;
-            -webkit-tap-highlight-color: transparent; /* Remove the tap highlight */
-        }
-    }
 `;
 
 const InnerContainer = styled.div`
@@ -66,6 +59,11 @@ const ExpandButton = styled.button`
         scale: 1.2;
     }
 
+    &:focus {
+        outline: 0;
+        -webkit-tap-highlight-color: transparent; /* Remove the tap highlight */
+    }
+
     span {
         color: #ffff;
         font-size: 2rem;
@@ -95,10 +93,14 @@ const CollapseButton = styled.button`
     border: unset;
     cursor: pointer;
 
-    :hover {
+    &:hover {
         polyline {
             stroke: ${variables.color1};
         }
+    }
+    &:focus {
+        outline: 0;
+        -webkit-tap-highlight-color: transparent; /* Remove the tap highlight */
     }
 
     svg {

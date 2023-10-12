@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
+import { variables } from '@/styles/Variables';
+import XIcon from './svg/XIcon.svg';
 
 const ModalContainer = styled(motion.div)`
     position: fixed;
@@ -27,13 +29,21 @@ const ModalContainer = styled(motion.div)`
 `;
 
 const CloseModal = styled.button`
-    width: 20px;
-    height: 20px;
+    background-color: unset;
+    border: unset;
     z-index: 100;
     position: absolute;
     top: 48px;
     right: 48px;
     cursor: pointer;
+    width: 48px;
+    height: 48px;
+
+    &:hover {
+        g {
+            fill: blue;
+        }
+    }
 `;
 
 export default function Modal({ isVisible, setModalActive }) {
@@ -49,7 +59,9 @@ export default function Modal({ isVisible, setModalActive }) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <CloseModal onClick={deactivateModal}></CloseModal>
+                    <CloseModal onClick={deactivateModal}>
+                        <XIcon />
+                    </CloseModal>
                 </ModalContainer>
             )}
         </AnimatePresence>
