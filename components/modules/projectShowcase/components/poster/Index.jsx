@@ -16,26 +16,29 @@ const InnerContainer = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    position: relative;
 `;
 
 const ModalButton = styled.button`
     background-color: unset;
     border: unset;
-    padding: 24px 0 0 24px;
     position: absolute;
+    width: 100%;
+    height: 100%;
     right: 0;
     bottom: 0;
     cursor: pointer;
     z-index: ${(props) => (props.$visible ? 2 : 0)};
     opacity: ${(props) => (props.$visible ? 1 : 0)};
-    transition: opacity ease-out 1.2s;
-    border-radius: 18px 0 0 0;
+    transition:
+        opacity ease-out 1.2s,
+        scale ease-out 0.3s;
 
     &::before {
         content: '';
         position: absolute;
-        width: 60%;
-        height: 60%;
+        width: 12%;
+        height: 15%;
         background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -55,6 +58,9 @@ const ModalButton = styled.button`
 
     svg {
         margin-top: 3px;
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
     }
 `;
 
@@ -79,6 +85,11 @@ const StyledImage = styled(Image)`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: scale ease-out 0.3s;
+
+    &.hovered {
+        scale: 1.1;
+    }
 `;
 
 export default function Poster({ className, img, title, description }) {
@@ -111,6 +122,17 @@ export default function Poster({ className, img, title, description }) {
         setModalActive(true);
     };
 
+    const [buttonHovered, setButtonHovered] = useState();
+    const buttonRef = useRef(null);
+
+    const handleImageHover = () => {
+        setButtonHovered(true);
+    };
+
+    const handleImageUnhover = () => {
+        setButtonHovered(false);
+    };
+
     return (
         <Container className={className} id='container' ref={ref}>
             <InnerContainer>
@@ -120,12 +142,16 @@ export default function Poster({ className, img, title, description }) {
                         alt={img.alt}
                         width={601}
                         height={448.5}
+                        className={buttonHovered && 'hovered'}
                     />
                     <Curtains>{curtainLottie}</Curtains>
                 </ImageWrapper>
                 <ModalButton
                     $visible={modalButtonVisible}
                     onClick={ActivateModal}
+                    ref={buttonRef}
+                    onMouseEnter={handleImageHover}
+                    onMouseLeave={handleImageUnhover} //
                 >
                     <InfoIcon />
                 </ModalButton>
