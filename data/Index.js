@@ -147,6 +147,23 @@ export const landingPageData = {
         projects: [
             {
                 heading: 'Beggars Pizza',
+                subheading:
+                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                content: [
+                    {
+                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                    },
+                    {
+                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                    },
+                    {
+                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                    },
+                    {
+                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                    },
+                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                ],
                 img: {
                     src: '/projects/beggars/beggars-poster.png',
                     alt: 'beggars pizza home page',
@@ -171,9 +188,6 @@ export const landingPageData = {
                         },
                     },
                 ],
-                subheading:
-                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
-                content: '',
             },
             {
                 heading: 'MJ Schuetz Insurance',

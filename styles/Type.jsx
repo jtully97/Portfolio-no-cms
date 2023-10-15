@@ -111,13 +111,13 @@ export const h3styles = css`
     color: #ffff;
 
     @media ${MediaQueries.tablet} {
-        font-size: 4.8rem;
-        line-height: 5.8rem;
+        font-size: 3.7rem;
+        line-height: 3.8rem;
     }
 
     @media ${MediaQueries.mobile} {
-        font-size: 3.9rem;
-        line-height: 4.2rem;
+        font-size: 3.2rem;
+        line-height: 3.3rem;
     }
 `;
 

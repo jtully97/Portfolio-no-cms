@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import { variables } from '@/styles/Variables';
-import XIcon from './svg/XIcon.svg';
+import Close from '@/components/svg/close/Index';
 
 const ModalContainer = styled(motion.div)`
     position: fixed;
@@ -10,7 +10,7 @@ const ModalContainer = styled(motion.div)`
     top: 0;
     z-index: 11;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -37,12 +37,21 @@ const CloseModal = styled.button`
     top: 18px;
     right: 38px;
     cursor: pointer;
-    width: 48px;
-    height: 48px;
+    width: 34px;
+    height: 34px;
+
+    svg {
+        polyline {
+            stroke: #fff;
+            transition: stroke ease-out 0.35s;
+        }
+    }
 
     &:hover {
-        g {
-            fill: blue;
+        svg {
+            polyline {
+                stroke: ${variables.color2};
+            }
         }
     }
 `;
@@ -61,7 +70,7 @@ export default function Modal({ isVisible, setModalActive, children }) {
                     transition={{ duration: 0.2 }}
                 >
                     <CloseModal onClick={deactivateModal}>
-                        <XIcon />
+                        <Close />
                     </CloseModal>
                     {children}
                 </ModalContainer>

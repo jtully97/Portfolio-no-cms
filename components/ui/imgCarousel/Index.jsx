@@ -213,7 +213,7 @@ export default function ImgCarousel({ className, imgs = [] }) {
                         exit='exit'
                         transition={{
                             x: { type: 'spring', stiffness: 300, damping: 30 },
-                            opacity: { duration: 0.2 },
+                            opacity: { duration: 0.5 },
                         }}
                         drag='x'
                         dragConstraints={{ left: 0, right: 0 }}
@@ -241,7 +241,6 @@ export default function ImgCarousel({ className, imgs = [] }) {
                     );
                 })}
             </PaginationContainer>
-            <div className='test'></div>
         </Container>
     );
 }
