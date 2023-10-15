@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const Container = styled.div`
     height: 100%;
-    margin-top: 80px;
+    margin-top: 60px;
 `;
 
 const InnerContainer = styled.div`

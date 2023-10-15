@@ -122,7 +122,7 @@ export default function Poster({
 
         if (isInView) {
             openCurtains();
-            setTimeout(() => setModalButtonVisible(true), 1500);
+            setTimeout(() => setModalButtonVisible(true), 1000);
         }
     }, [isInView]);
 
