@@ -15,6 +15,7 @@ const Container = styled.section`
     background-color: ${variables.color2};
     padding: 224px 0px;
     position: relative;
+    width: 100vw;
 
     &:after {
         content: '';

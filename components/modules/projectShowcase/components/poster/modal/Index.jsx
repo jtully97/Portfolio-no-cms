@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import { variables } from '@/styles/Variables';
 import Close from '@/components/svg/close/Index';
 import { MediaQueries } from '@/styles/Utilities';
+import useScrollBlock from '@/customHooks/useScrollBlock';
 
 const ModalContainer = styled(motion.div)`
     position: fixed;
@@ -66,9 +67,20 @@ const CloseModal = styled.button`
 `;
 
 export default function Modal({ isVisible, setModalActive, children }) {
+    const [blockScroll, allowScroll] = useScrollBlock();
+
     const deactivateModal = () => {
         setModalActive(false);
     };
+
+    useEffect(() => {
+        if (isVisible) {
+            blockScroll();
+        } else {
+            allowScroll();
+        }
+    }, [isVisible]);
+
     return (
         <AnimatePresence>
             {isVisible && (

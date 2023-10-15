@@ -87,7 +87,7 @@ const ContentLi = styled.li`
             content: '';
             position: absolute;
             width: 14px;
-            height: 16px;
+            height: 20px;
             background-color: #fff;
             left: 4%;
             bottom: -14px;
