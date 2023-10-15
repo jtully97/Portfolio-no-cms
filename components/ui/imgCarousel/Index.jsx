@@ -30,8 +30,8 @@ const ImageWrapper = styled(motion.div)`
         width: 100%;
         height: 100%;
         background-color: #000;
-        opacity: ${(props) => (props.$hideSwipeIndicator ? 0 : 0.5)};
-        z-index: ${(props) => (props.$hideSwipeIndicator ? 0 : 2)};
+        opacity: ${(props) => (props.$hideSwipeIndicator ? 0 : 0.7)};
+        z-index: ${(props) => (props.$hideSwipeComplete ? 0 : 2)};
         transition: opacity ease-out 1.5s;
     }
 `;
@@ -40,6 +40,7 @@ const StyledImage = styled(motion.img)`
     cursor: pointer;
     max-width: 100%;
     height: auto;
+    border-radius: 4px;
     box-shadow:
         rgba(0, 0, 0, 0.25) 0px 54px 55px,
         rgba(0, 0, 0, 0.12) 0px -12px 30px,
@@ -192,6 +193,7 @@ export default function ImgCarousel({ className, imgs = [] }) {
                 <ImageWrapper
                     ref={imgWrapperRef}
                     $hideSwipeIndicator={hideSwipeIndicator}
+                    $hideSwipeComplete={hideSwipeComplete}
                 >
                     <SwipeIndicatorContainer
                         $hideSwipeIndicator={hideSwipeIndicator}
