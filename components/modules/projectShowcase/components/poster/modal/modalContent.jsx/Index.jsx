@@ -90,8 +90,12 @@ const ContentLi = styled.li`
             width: 14px;
             height: 20px;
             background-color: #fff;
-            left: 4%;
+            left: 40px;
             bottom: -14px;
+
+            @media ${MediaQueries.mobile} {
+                left: 34px;
+            }
         }
     }
 `;
