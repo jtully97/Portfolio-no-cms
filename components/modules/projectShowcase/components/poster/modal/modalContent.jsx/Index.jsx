@@ -6,8 +6,14 @@ import { h3styles, pXSmall } from '@/styles/Type';
 import Image from 'next/image';
 
 const Container = styled.div`
+    position: absolute;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     height: 100%;
-    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
 `;
 
 const InnerContainer = styled.div`
@@ -19,6 +25,8 @@ const InnerContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     align-items: center;
+    min-height: 0;
+    flex-grow: 1;
 
     @media ${MediaQueries.tablet} {
         align-items: start;
@@ -50,6 +58,9 @@ const ContentUl = styled.ul`
     gap: 14px;
     max-width: 780px;
     margin-top: 14px;
+    flex: 1;
+    overflow: auto;
+    min-height: 0;
 `;
 
 const ContentLi = styled.li`
