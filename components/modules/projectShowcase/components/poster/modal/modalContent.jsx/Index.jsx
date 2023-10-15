@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
     ${containerStyles}
-    max-width: 780px;
+    max-width: 1080px;
     height: 100%;
     width: 100%;
     display: flex;
@@ -31,6 +31,7 @@ const InnerContainer = styled.div`
 
     @media ${MediaQueries.tablet} {
         align-items: start;
+        max-width: 980px;
     }
 `;
 
@@ -44,7 +45,6 @@ const Subheading = styled.p`
 `;
 
 const StyledImgCarousel = styled(ImgCarousel)`
-    max-width: 780px;
     width: 100%;
     margin-top: 24px;
 `;
@@ -57,11 +57,13 @@ const ContentUl = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 14px;
-    max-width: 780px;
     margin-top: 14px;
     flex: 1;
     overflow: auto;
     min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    padding-bottom: 30px;
 
     &::-webkit-scrollbar {
         width: 0;
@@ -70,9 +72,6 @@ const ContentUl = styled.ul`
     &::-webkit-scrollbar-thumb {
         background-color: transparent;
     }
-
-    scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
 `;
 
 const ContentLi = styled.li`
