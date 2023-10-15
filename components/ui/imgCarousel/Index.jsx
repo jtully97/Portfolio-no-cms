@@ -18,6 +18,8 @@ const Container = styled.div`
 const ImageWrapper = styled(motion.div)`
     position: relative;
     display: flex;
+    width: 100%;
+    height: 100%;
     aspect-ratio: 902 / 483;
 
     &::after {
@@ -231,7 +233,7 @@ export default function ImgCarousel({ className, imgs = [] }) {
                         <PaginationButton
                             key={index}
                             onClick={() => paginate(0, index)}
-                            className={page === index && 'active'}
+                            className={imageIndex === index && 'active'}
                         />
                     );
                 })}
