@@ -17,6 +17,7 @@ const Container = styled(motion.div)`
 
     &::before {
         content: '';
+        border-radius: inherit;
         z-index: 0;
         width: 100%;
         height: 100%;
