@@ -11,7 +11,7 @@ const ModalContainer = styled(motion.div)`
     top: 0;
     z-index: 11;
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
