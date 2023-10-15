@@ -167,21 +167,16 @@ export const pBase = css`
 
 export const pSmall = css`
     font-family: ${lato};
-    font-size: 1.5rem;
-    line-height: 1.7rem;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
     font-weight: 300;
     color: #ffff;
-
-    @media ${MediaQueries.tablet} {
-        font-size: 1.3rem;
-        line-height: 1.4rem;
-    }
 `;
 
 export const pXSmall = css`
     font-family: ${lato};
-    font-size: 1.4rem;
-    line-height: 1.9rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
     font-weight: 300;
     color: #ffff;
 `;

@@ -25,6 +25,7 @@ const ModalContainer = styled(motion.div)`
         z-index: 0;
         background: #000;
         opacity: 0.6;
+        z-index: -1;
     }
 `;
 
@@ -33,8 +34,8 @@ const CloseModal = styled.button`
     border: unset;
     z-index: 100;
     position: absolute;
-    top: 48px;
-    right: 48px;
+    top: 18px;
+    right: 38px;
     cursor: pointer;
     width: 48px;
     height: 48px;
@@ -46,7 +47,7 @@ const CloseModal = styled.button`
     }
 `;
 
-export default function Modal({ isVisible, setModalActive }) {
+export default function Modal({ isVisible, setModalActive, children }) {
     const deactivateModal = () => {
         setModalActive(false);
     };
@@ -62,6 +63,7 @@ export default function Modal({ isVisible, setModalActive }) {
                     <CloseModal onClick={deactivateModal}>
                         <XIcon />
                     </CloseModal>
+                    {children}
                 </ModalContainer>
             )}
         </AnimatePresence>

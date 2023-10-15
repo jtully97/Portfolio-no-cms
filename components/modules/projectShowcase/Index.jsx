@@ -76,13 +76,12 @@ const Heading = styled.h2`
 
 const ProjectsGridContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
     margin-top: 88px;
-    gap: 24px;
+    gap: 54px 34px;
     justify-items: center;
 
     @media ${MediaQueries.tablet} {
-        grid-template-columns: repeat(3, auto);
         gap: 28px;
     }
 
@@ -97,7 +96,8 @@ const ProjectsGridContainer = styled.div`
 `;
 
 const StyledPoster = styled(Poster)`
-    max-width: 480px;
+    max-width: 700px;
+    width: 100%;
 `;
 
 export default function ProjectShowcase({ eyebrow, heading, projects }) {
@@ -163,7 +163,10 @@ export default function ProjectShowcase({ eyebrow, heading, projects }) {
                         return (
                             <StyledPoster
                                 img={project.img}
-                                title={project.title}
+                                imgs={project.imgs}
+                                heading={project.heading}
+                                subheading={project.subheading}
+                                content={project.content}
                                 key={index}
                             />
                         );

@@ -146,49 +146,72 @@ export const landingPageData = {
         heading: 'Some of My Projects',
         projects: [
             {
-                title: 'Beggars Pizza',
+                heading: 'Beggars Pizza',
                 img: {
-                    src: '/projects/beggars-poster.png',
+                    src: '/projects/beggars/beggars-poster.png',
                     alt: 'beggars pizza home page',
                 },
+                imgs: [
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img1.png',
+                            alt: 'beggars pizza map',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img2.png',
+                            alt: 'beggars pizza white sox',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img3.png',
+                            alt: 'beggars pizza module',
+                        },
+                    },
+                ],
+                subheading:
+                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                content: '',
             },
             {
-                title: 'MJ Schuetz Insurance',
+                heading: 'MJ Schuetz Insurance',
                 img: {
                     src: '/projects/MJ-insurance-agency.png',
                     alt: 'MJ Schuetz Insurance home page',
                 },
             },
             {
-                title: 'C4 Chicago',
+                heading: 'C4 Chicago',
                 img: {
                     src: '/projects/C4-Chi.png',
                     alt: 'C4 Chicago home page',
                 },
             },
             {
-                title: 'SafeCare Corp',
+                heading: 'SafeCare Corp',
                 img: {
                     src: '/projects/safecare-poster.png',
                     alt: 'safecare home page',
                 },
             },
             {
-                title: 'Chicago Living Group',
+                heading: 'Chicago Living Group',
                 img: {
                     src: '/projects/chicago-living.png',
                     alt: 'Chicago Living Group home page',
                 },
             },
             {
-                title: 'Tulayna Limo Service',
+                heading: 'Tulayna Limo Service',
                 img: {
                     src: '/projects/tulayna-limo-service.png',
                     alt: 'Tulayna Limo Service home page',
                 },
             },
             {
-                title: 'Townsend Tree Services',
+                heading: 'Townsend Tree Services',
                 img: {
                     src: '/projects/townsend-tree-services.png',
                     alt: 'Townsend Tree Services home page',

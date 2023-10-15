@@ -7,6 +7,7 @@ import { useLottie } from 'lottie-react';
 import { useInView } from 'framer-motion';
 import InfoIcon from '/public/svg/InfoIcon.svg';
 import Modal from './modal/Index';
+import ModalContent from './modal/modalContent.jsx/Index';
 
 const Container = styled.div``;
 
@@ -37,8 +38,8 @@ const ModalButton = styled.button`
     &::before {
         content: '';
         position: absolute;
-        width: 12%;
-        height: 15%;
+        width: 38px;
+        height: 37px;
         background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -92,7 +93,14 @@ const StyledImage = styled(Image)`
     }
 `;
 
-export default function Poster({ className, img, title, description }) {
+export default function Poster({
+    className,
+    img,
+    imgs,
+    heading,
+    subheading,
+    content,
+}) {
     const ref = useRef(null);
     const isInView = useInView(ref, { amount: 1 });
     const [modalButtonVisible, setModalButtonVisible] = useState(false);
@@ -151,12 +159,19 @@ export default function Poster({ className, img, title, description }) {
                     onClick={ActivateModal}
                     ref={buttonRef}
                     onMouseEnter={handleImageHover}
-                    onMouseLeave={handleImageUnhover} //
+                    onMouseLeave={handleImageUnhover}
                 >
                     <InfoIcon />
                 </ModalButton>
             </InnerContainer>
-            <Modal isVisible={modalActive} setModalActive={setModalActive} />
+            <Modal isVisible={modalActive} setModalActive={setModalActive}>
+                <ModalContent
+                    imgs={imgs ? imgs : img}
+                    heading={heading}
+                    subheading={subheading}
+                    content={content}
+                />
+            </Modal>
         </Container>
     );
 }
