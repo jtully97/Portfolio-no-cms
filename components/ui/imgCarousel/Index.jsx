@@ -37,7 +37,7 @@ const ImageWrapper = styled(motion.div)`
 `;
 
 const StyledImage = styled(motion.img)`
-    cursor: pointer;
+    cursor: grab;
     aspect-ratio: 902 / 483;
     min-width: 100%;
     height: auto;

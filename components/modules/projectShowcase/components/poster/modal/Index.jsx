@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import { variables } from '@/styles/Variables';
 import Close from '@/components/svg/close/Index';
+import { MediaQueries } from '@/styles/Utilities';
 
 const ModalContainer = styled(motion.div)`
     position: fixed;
@@ -39,6 +40,14 @@ const CloseModal = styled.button`
     cursor: pointer;
     width: 34px;
     height: 34px;
+
+    @media ${MediaQueries.mobile} {
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        right: 8px;
+        top: 8px;
+    }
 
     svg {
         polyline {

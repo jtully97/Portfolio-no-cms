@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { MediaQueries, Container as containerStyles } from '@/styles/Utilities';
 import ImgCarousel from '@/components/ui/imgCarousel/Index';
@@ -12,6 +12,7 @@ const Container = styled.div`
     bottom: 0;
     left: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 `;
@@ -20,6 +21,7 @@ const InnerContainer = styled.div`
     ${containerStyles}
     max-width: 780px;
     height: 100%;
+    width: 100%;
     display: flex;
     display: flex;
     flex-direction: column;
@@ -61,6 +63,17 @@ const ContentUl = styled.ul`
     flex: 1;
     overflow: auto;
     min-height: 0;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
 `;
 
 const ContentLi = styled.li`
@@ -101,7 +114,7 @@ export default function ModalContent({
                 ) : (
                     <StyledImage src={''} alt={''} />
                 )}
-                <ContentUl>
+                <ContentUl id='draggable-container'>
                     {content.map((item, index) => (
                         <ContentLi key={index}>{item.li}</ContentLi>
                     ))}
