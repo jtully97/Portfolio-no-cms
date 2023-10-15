@@ -67,6 +67,7 @@ const ContentUl = styled.ul`
 
     &::-webkit-scrollbar {
         width: 0;
+        display: none;
     }
 
     &::-webkit-scrollbar-thumb {

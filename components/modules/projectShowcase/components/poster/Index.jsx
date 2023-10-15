@@ -60,7 +60,7 @@ const ModalButton = styled.button`
     svg {
         margin-top: 3px;
         position: absolute;
-        right: 3px;
+        right: 5px;
         bottom: 3px;
     }
 `;

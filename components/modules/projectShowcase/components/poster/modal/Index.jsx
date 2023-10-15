@@ -53,14 +53,15 @@ const CloseModal = styled.button`
     svg {
         polyline {
             stroke: #fff;
-            transition: stroke ease-out 0.35s;
+            transition: filter ease-out 0.35s;
         }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         svg {
             polyline {
-                stroke: ${variables.color2};
+                filter: brightness(0.7);
             }
         }
     }
