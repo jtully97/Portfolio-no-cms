@@ -11,7 +11,7 @@ export default function Layout({ children }) {
             <StyledComponentsRegistry>
                 <main id='main'>{children}</main>
             </StyledComponentsRegistry>
-            <Footer links={footerData.links} iconLinks={footerData.iconLinks} />
+            <Footer iconLinks={footerData.iconLinks} />
         </>
     );
 }

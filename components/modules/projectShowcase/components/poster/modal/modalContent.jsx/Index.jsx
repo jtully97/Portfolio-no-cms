@@ -64,6 +64,7 @@ const ContentUl = styled.ul`
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
     padding-bottom: 30px;
+    padding-right: 5px;
 
     &::-webkit-scrollbar {
         width: 0;
@@ -78,20 +79,34 @@ const ContentUl = styled.ul`
 const ContentLi = styled.li`
     ${pXSmall}
     padding: 8px 18px;
-    background-color: #fff;
-    border-radius: 14px;
     color: #000;
     position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 14px;
+        z-index: -1;
+        border: 2px solid #000;
+    }
 
     &:not(:last-of-type) {
         &::before {
             content: '';
             position: absolute;
             width: 14px;
-            height: 20px;
+            height: 14px;
             background-color: #fff;
             left: 40px;
-            bottom: -14px;
+            bottom: -16px;
+            z-index: 1;
+            border-left: 2px solid #000;
+            border-right: 2px solid #000;
 
             @media ${MediaQueries.mobile} {
                 left: 34px;

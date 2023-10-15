@@ -19,23 +19,7 @@ export const navData = {
 };
 
 export const footerData = {
-    links: [
-        {
-            text: 'Skills',
-            href: '#skills',
-            target: '',
-        },
-        {
-            text: 'Projects',
-            href: '#projects',
-            target: '',
-        },
-        {
-            text: 'Contact',
-            href: '#contact',
-            target: '',
-        },
-    ],
+    linkIconHeading: 'Socials',
     iconLinks: [
         {
             icon: {
