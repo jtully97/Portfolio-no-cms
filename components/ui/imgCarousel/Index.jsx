@@ -165,7 +165,7 @@ export default function ImgCarousel({ className, imgs = [] }) {
     } = useLottie(swipeIndicatorOptions);
 
     useEffect(() => {
-        setSpeed(0.7);
+        setSpeed(0.5);
 
         if (isInView) {
             startIndicator();
