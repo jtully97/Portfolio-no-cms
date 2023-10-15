@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from './nav/Index';
 import Footer from './footer/Index';
 import StyledComponentsRegistry from '@/lib/registry';
-import { navData } from '@/data/Index';
+import { navData, footerData } from '@/data/Index';
 
 export default function Layout({ children }) {
     return (
@@ -11,7 +11,7 @@ export default function Layout({ children }) {
             <StyledComponentsRegistry>
                 <main id='main'>{children}</main>
             </StyledComponentsRegistry>
-            <Footer />
+            <Footer links={footerData.links} iconLinks={footerData.iconLinks} />
         </>
     );
 }

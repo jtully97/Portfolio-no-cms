@@ -9,7 +9,6 @@ import { motion } from 'framer-motion';
 
 const Container = styled.section`
     width: 100vw;
-    min-height: 2000px;
     position: relative;
     padding: 124px 0px;
 

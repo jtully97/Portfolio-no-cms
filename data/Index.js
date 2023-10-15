@@ -18,6 +18,38 @@ export const navData = {
     ],
 };
 
+export const footerData = {
+    links: [
+        {
+            text: 'Skills',
+            href: '#skills',
+            target: '',
+        },
+        {
+            text: 'Projects',
+            href: '#projects',
+            target: '',
+        },
+        {
+            text: 'Contact',
+            href: '#contact',
+            target: '',
+        },
+    ],
+    iconLinks: [
+        {
+            icon: {
+                src: '',
+            },
+        },
+        {
+            icon: {
+                src: '',
+            },
+        },
+    ],
+};
+
 export const landingPageData = {
     imageContent: {
         heading: 'Creative, Analytical, Passionate',
@@ -149,6 +181,7 @@ export const landingPageData = {
                 heading: 'Beggars Pizza',
                 subheading:
                     'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                url: 'https://www.beggarspizza.com/',
                 content: [
                     {
                         li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
