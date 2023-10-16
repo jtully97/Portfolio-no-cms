@@ -5,7 +5,7 @@ import { h2styles, pBase } from '@/styles/Type';
 import { variables } from '@/styles/Variables';
 import Form from './form/Index';
 
-const Container = styled.div`
+const Container = styled.section`
     padding: 280px 0;
     width: 100vw;
     background-color: ${variables.color2};
@@ -93,7 +93,7 @@ const StyledForm = styled(Form)`
 
 export default function Contact({ heading, email }) {
     return (
-        <Container>
+        <Container id='contact'>
             <InnerContainer>
                 <ContentContainer>
                     <Heading>{heading}</Heading>
