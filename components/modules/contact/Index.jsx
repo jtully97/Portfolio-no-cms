@@ -11,6 +11,14 @@ const Container = styled.div`
     background-color: ${variables.color2};
     position: relative;
 
+    @media ${MediaQueries.tablet} {
+        padding: 180px 0;
+    }
+
+    @media ${MediaQueries.mobile} {
+        padding: 140px 0;
+    }
+
     &::after {
         content: '';
         position: absolute;
