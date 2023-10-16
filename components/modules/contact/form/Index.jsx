@@ -24,6 +24,7 @@ const Background = styled.div`
     height: 100%;
     opacity: 0.5;
     overflow: hidden;
+    border-radius: 14px;
 
     &::after {
         content: '';
@@ -170,7 +171,13 @@ export default function Form({ className }) {
                     {...register('email', { required: true })}
                 />
                 {errors.email && <ErrorMessage>Email is required</ErrorMessage>}
-                <TextArea placeholder='Message' {...register('message')} />
+                <TextArea
+                    placeholder='Message*'
+                    {...register('message', { required: true })}
+                />
+                {errors.message && (
+                    <ErrorMessage>A message is required</ErrorMessage>
+                )}
                 <SubmitButton disabled={false} type='submit'>
                     Submit
                 </SubmitButton>
