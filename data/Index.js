@@ -250,4 +250,8 @@ export const landingPageData = {
             },
         ],
     },
+    contact: {
+        heading: 'Talk to me',
+        email: 'cotactme@jdtully.com',
+    },
 };

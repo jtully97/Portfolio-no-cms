@@ -32,13 +32,14 @@ const BackgroundImage = styled.div`
     // Whole opaque overlay
     &::after {
         content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        height: 60%;
+        background: #ffffff00;
+        background: -webkit-linear-gradient(top, #ffffff00, ${variables.black});
+        background: -moz-linear-gradient(top, #ffffff00, ${variables.black});
+        background: linear-gradient(to bottom, #ffffff00, ${variables.black});
     }
 
     // Top to bottom overlay
@@ -75,10 +76,10 @@ const Heading = styled.h2`
 
 const ProjectsGridContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 88px;
     gap: 54px 34px;
-    justify-items: center;
+    justify-content: space-between;
 
     @media ${MediaQueries.tablet} {
         gap: 28px;
@@ -95,7 +96,7 @@ const ProjectsGridContainer = styled.div`
 `;
 
 const StyledPoster = styled(Poster)`
-    max-width: 700px;
+    max-width: 718px;
     width: 100%;
 `;
 

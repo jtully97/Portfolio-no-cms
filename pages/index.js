@@ -6,6 +6,7 @@ import ImageContent from '@/components/modules/imageContent/Index';
 import CardShowcase from '@/components/modules/cardShowcase/Index';
 import ProjectShowcase from '@/components/modules/projectShowcase/Index';
 import { landingPageData } from '@/data/Index';
+import Contact from '@/components/modules/contact/Index';
 
 export default function Home() {
     return (
@@ -30,6 +31,10 @@ export default function Home() {
                     eyebrow={landingPageData.projectShowcase.eyebrow}
                     heading={landingPageData.projectShowcase.heading}
                     projects={landingPageData.projectShowcase.projects}
+                />
+                <Contact
+                    heading={landingPageData.contact.heading}
+                    email={landingPageData.contact.email}
                 />
             </main>
         </>
