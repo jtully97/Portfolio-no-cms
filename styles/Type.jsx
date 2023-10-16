@@ -22,7 +22,7 @@ export const glowMobile = keyframes`
     }
 `;
 
-const lato = `'Lato', sans-serif`;
+const lato = `Lato, sans-serif`;
 const merriweather = `'Merriweather', sans`;
 const pacifico = 'Pacifico, sans-serif';
 export const neonderthaw = 'Neonderthaw, cursive';
