@@ -7,7 +7,7 @@ import css from 'styled-jsx/css';
 import { MediaQueries } from '@/styles/Utilities';
 import { pXSmall } from '@/styles/Type';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -135,7 +135,7 @@ const SubmitButton = styled.button`
     ${pXSmall}
 `;
 
-export default function Form({ className }) {
+export default function Form({ className, motionProps }) {
     const {
         register,
         handleSubmit,
@@ -158,7 +158,7 @@ export default function Form({ className }) {
     }, [isInView]);
 
     return (
-        <Container className={className}>
+        <Container className={className} {...motionProps}>
             <Background $playAnimation={formInView} />
             <MotionForm
                 onSubmit={handleSubmit(onSubmit)}

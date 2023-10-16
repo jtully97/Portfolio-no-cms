@@ -87,6 +87,25 @@ const Subheading = styled.p`
     }
 `;
 
+const FormInViewProps = {
+    initial: {
+        y: '100%',
+        opacity: 0,
+        rotate: -8,
+    },
+    whileInView: {
+        y: 0,
+        opacity: 1,
+        rotate: 0,
+    },
+    viewport: { once: true, amount: 0.2 },
+    transition: {
+        duration: 0.45,
+        type: 'spring',
+        stiffness: 50,
+    },
+};
+
 const StyledForm = styled(Form)`
     max-width: 800px;
 `;
@@ -102,7 +121,7 @@ export default function Contact({ heading, email }) {
                         <a href={`mailto:${email}`}>Here</a>
                     </Subheading>
                 </ContentContainer>
-                <StyledForm />
+                <StyledForm motionProps={FormInViewProps} />
             </InnerContainer>
         </Container>
     );
