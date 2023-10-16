@@ -65,6 +65,7 @@ const ContentUl = styled.ul`
     scrollbar-color: transparent transparent;
     padding-bottom: 30px;
     padding-right: 5px;
+    z-index: 2;
 
     &::-webkit-scrollbar {
         width: 0;
