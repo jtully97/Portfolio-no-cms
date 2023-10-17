@@ -1,18 +1,20 @@
 import styled from 'styled-components';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { variables } from '@/styles/Variables';
-import { inView, motion, useInView } from 'framer-motion';
+import { AnimatePresence, inView, motion, useInView } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import css from 'styled-jsx/css';
 import { MediaQueries } from '@/styles/Utilities';
-import { pXSmall } from '@/styles/Type';
+import { pXSmall, pSmall, pBase } from '@/styles/Type';
 import axios from 'axios';
 
 const Container = styled(motion.div)`
     width: 100%;
     position: relative;
-    overflow: hidden;
     border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Background = styled.div`
@@ -75,6 +77,11 @@ const Background = styled.div`
     }
 `;
 
+const MotionFormWrapper = styled(motion.div)`
+    width: 100%;
+    height: 100%;
+`;
+
 const MotionForm = styled(motion.form)`
     display: flex;
     flex-direction: column;
@@ -83,6 +90,7 @@ const MotionForm = styled(motion.form)`
     padding: 94px;
     position: relative;
     z-index: 1;
+    width: 100%;
 
     @media ${MediaQueries.tablet} {
         padding: 44px;
@@ -134,7 +142,37 @@ const SubmitButton = styled.button`
     ${pXSmall}
 `;
 
-export default function Form({ className, motionProps }) {
+const PostSubmissionMessage = styled(motion.p)`
+    ${pBase}
+    padding: 48px;
+    color: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+
+    @media ${MediaQueries.mobile} {
+        padding: 24px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: -1;
+    }
+`;
+
+export default function Form({
+    className,
+    motionProps,
+    successMessage,
+    failedMessage,
+}) {
     const [formSubmitStatus, setFormSubmitStatus] = useState(null);
 
     const {
@@ -161,31 +199,61 @@ export default function Form({ className, motionProps }) {
         }
     }, [isInView]);
 
+    const FormViewSwitchMotionProps = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+        transition: { duration: 1.8 },
+    };
+
     return (
         <Container className={className} {...motionProps}>
-            <Background $playAnimation={formInView} />
-            <MotionForm
-                onSubmit={handleSubmit(onSubmit)}
-                ref={formRef}
-                $inView={formInView}
-            >
-                <Input placeholder='Name' {...register('name')} />
-                <Input
-                    placeholder='Email Address*'
-                    {...register('email', { required: true })}
-                />
-                {errors.email && <ErrorMessage>Email is required</ErrorMessage>}
-                <TextArea
-                    placeholder='Message*'
-                    {...register('message', { required: true })}
-                />
-                {errors.message && (
-                    <ErrorMessage>A message is required</ErrorMessage>
-                )}
-                <SubmitButton disabled={false} type='submit'>
-                    Submit
-                </SubmitButton>
-            </MotionForm>
+            {
+                <AnimatePresence mode='wait'>
+                    {formSubmitStatus ? (
+                        <PostSubmissionMessage {...FormViewSwitchMotionProps}>
+                            {formSubmitStatus === 200
+                                ? successMessage
+                                : failedMessage}
+                        </PostSubmissionMessage>
+                    ) : (
+                        <MotionFormWrapper {...FormViewSwitchMotionProps}>
+                            <Background $playAnimation={formInView} />
+                            <MotionForm
+                                onSubmit={handleSubmit(onSubmit)}
+                                ref={formRef}
+                                $inView={formInView}
+                            >
+                                <Input
+                                    placeholder='Name'
+                                    {...register('name')}
+                                />
+                                <Input
+                                    placeholder='Email Address*'
+                                    {...register('email', { required: true })}
+                                />
+                                {errors.email && (
+                                    <ErrorMessage>
+                                        Email is required
+                                    </ErrorMessage>
+                                )}
+                                <TextArea
+                                    placeholder='Message*'
+                                    {...register('message', { required: true })}
+                                />
+                                {errors.message && (
+                                    <ErrorMessage>
+                                        A message is required
+                                    </ErrorMessage>
+                                )}
+                                <SubmitButton disabled={false} type='submit'>
+                                    Submit
+                                </SubmitButton>
+                            </MotionForm>
+                        </MotionFormWrapper>
+                    )}
+                </AnimatePresence>
+            }
         </Container>
     );
 }

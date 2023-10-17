@@ -208,50 +208,283 @@ export const landingPageData = {
             },
             {
                 heading: 'MJ Schuetz Insurance',
+                subheading:
+                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                url: 'https://www.beggarspizza.com/',
+                content: [
+                    {
+                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                    },
+                    {
+                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                    },
+                    {
+                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                    },
+                    {
+                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                    },
+                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                ],
                 img: {
                     src: '/projects/MJ-insurance-agency.png',
                     alt: 'MJ Schuetz Insurance home page',
                 },
+                imgs: [
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img1.png',
+                            alt: 'beggars pizza map',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img2.png',
+                            alt: 'beggars pizza white sox',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img3.png',
+                            alt: 'beggars pizza module',
+                        },
+                    },
+                ],
             },
             {
                 heading: 'C4 Chicago',
+                subheading:
+                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                url: 'https://www.beggarspizza.com/',
+                content: [
+                    {
+                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                    },
+                    {
+                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                    },
+                    {
+                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                    },
+                    {
+                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                    },
+                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                ],
                 img: {
                     src: '/projects/C4-Chi.png',
                     alt: 'C4 Chicago home page',
                 },
+                imgs: [
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img1.png',
+                            alt: 'beggars pizza map',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img2.png',
+                            alt: 'beggars pizza white sox',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img3.png',
+                            alt: 'beggars pizza module',
+                        },
+                    },
+                ],
             },
             {
                 heading: 'SafeCare Corp',
+                subheading:
+                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                url: 'https://www.beggarspizza.com/',
+                content: [
+                    {
+                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                    },
+                    {
+                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                    },
+                    {
+                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                    },
+                    {
+                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                    },
+                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                ],
                 img: {
                     src: '/projects/safecare-poster.png',
                     alt: 'safecare home page',
                 },
+                imgs: [
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img1.png',
+                            alt: 'beggars pizza map',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img2.png',
+                            alt: 'beggars pizza white sox',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img3.png',
+                            alt: 'beggars pizza module',
+                        },
+                    },
+                ],
             },
             {
                 heading: 'Chicago Living Group',
+                subheading:
+                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                url: 'https://www.beggarspizza.com/',
+                content: [
+                    {
+                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                    },
+                    {
+                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                    },
+                    {
+                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                    },
+                    {
+                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                    },
+                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                ],
                 img: {
                     src: '/projects/chicago-living.png',
                     alt: 'Chicago Living Group home page',
                 },
+                imgs: [
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img1.png',
+                            alt: 'beggars pizza map',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img2.png',
+                            alt: 'beggars pizza white sox',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img3.png',
+                            alt: 'beggars pizza module',
+                        },
+                    },
+                ],
             },
             {
                 heading: 'Tulayna Limo Service',
+                subheading:
+                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                url: 'https://www.beggarspizza.com/',
+                content: [
+                    {
+                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                    },
+                    {
+                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                    },
+                    {
+                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                    },
+                    {
+                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                    },
+                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                ],
                 img: {
                     src: '/projects/tulayna-limo-service.png',
                     alt: 'Tulayna Limo Service home page',
                 },
+                imgs: [
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img1.png',
+                            alt: 'beggars pizza map',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img2.png',
+                            alt: 'beggars pizza white sox',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img3.png',
+                            alt: 'beggars pizza module',
+                        },
+                    },
+                ],
             },
             {
                 heading: 'Townsend Tree Services',
+                subheading:
+                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                url: 'https://www.beggarspizza.com/',
+                content: [
+                    {
+                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                    },
+                    {
+                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                    },
+                    {
+                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                    },
+                    {
+                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                    },
+                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                ],
                 img: {
                     src: '/projects/townsend-tree-services.png',
                     alt: 'Townsend Tree Services home page',
                 },
+                imgs: [
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img1.png',
+                            alt: 'beggars pizza map',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img2.png',
+                            alt: 'beggars pizza white sox',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/beggars/carousel/img3.png',
+                            alt: 'beggars pizza module',
+                        },
+                    },
+                ],
             },
         ],
     },
     contact: {
+        eyebrow: 'reach out',
         heading: 'Talk to me',
         email: 'cotactme@jdtully.com',
+        successMessage:
+            "Hey! Thanks for reaching out, your message wen't right to my personal inbox. I will get back to you as soon as possible!",
+        failedMessage:
+            'Oops, something happened during your form submission. Please reach out through one of my email links :)',
     },
 };

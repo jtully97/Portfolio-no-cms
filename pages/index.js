@@ -33,6 +33,9 @@ export default function Home() {
                     projects={landingPageData.projectShowcase.projects}
                 />
                 <Contact
+                    successMessage={landingPageData.contact.successMessage}
+                    failedMessage={landingPageData.contact.failedMessage}
+                    eyebrow={landingPageData.contact.eyebrow}
                     heading={landingPageData.contact.heading}
                     email={landingPageData.contact.email}
                 />
