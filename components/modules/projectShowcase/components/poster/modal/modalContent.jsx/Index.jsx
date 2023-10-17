@@ -50,13 +50,17 @@ const StyledImgCarousel = styled(ImgCarousel)`
 `;
 
 /* Backup in event that carousel images do not exist */
-const StyledImage = styled(Image)``;
+const StyledImage = styled(Image)`
+    object-fit: cover;
+    margin-top: 24px;
+`;
 
 const ContentUl = styled.ul`
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    width: 100%;
     margin-top: 14px;
     flex: 1;
     overflow: auto;
@@ -74,6 +78,10 @@ const ContentUl = styled.ul`
 
     &::-webkit-scrollbar-thumb {
         background-color: transparent;
+    }
+
+    a {
+        text-decoration: underline;
     }
 `;
 
@@ -128,14 +136,22 @@ export default function ModalContent({
             <InnerContainer>
                 <Heading>{heading}</Heading>
                 <Subheading>{subheading}</Subheading>
-                {imgs ? (
+                {imgs.length !== 0 ? (
                     <StyledImgCarousel imgs={imgs} />
                 ) : (
-                    <StyledImage src={''} alt={''} />
+                    <StyledImage
+                        width={902}
+                        height={509.767}
+                        src={img.src}
+                        alt={img.alt}
+                    />
                 )}
                 <ContentUl id='draggable-container'>
                     {content.map((item, index) => (
-                        <ContentLi key={index}>{item.li}</ContentLi>
+                        <ContentLi
+                            key={index}
+                            dangerouslySetInnerHTML={{ __html: item.li }}
+                        ></ContentLi>
                     ))}
                 </ContentUl>
             </InnerContainer>

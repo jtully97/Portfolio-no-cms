@@ -166,6 +166,7 @@ export default function Poster({
             </InnerContainer>
             <Modal isVisible={modalActive} setModalActive={setModalActive}>
                 <ModalContent
+                    img={img}
                     imgs={imgs ? imgs : img}
                     heading={heading}
                     subheading={subheading}
