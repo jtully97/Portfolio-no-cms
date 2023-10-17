@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 import css from 'styled-jsx/css';
 import { MediaQueries } from '@/styles/Utilities';
 import { pXSmall } from '@/styles/Type';
+import axios from 'axios';
 
 const Container = styled(motion.div)`
     width: 100%;
@@ -50,10 +51,8 @@ const Background = styled.div`
         top: -150%;
         width: 400%;
         height: 400%;
-        ${(props) =>
-            props.$playAnimation
-                ? 'opacity: 1; transition: opacity ease-out 3s;'
-                : 'opacity: 0;'}
+        opacity: ${(props) => (props.$playAnimation ? 1 : 0)};
+        transition: opacity ease-out 3s;
         background-repeat: no-repeat;
         background-size:
             50% 50%,
@@ -136,6 +135,8 @@ const SubmitButton = styled.button`
 `;
 
 export default function Form({ className, motionProps }) {
+    const [formSubmitStatus, setFormSubmitStatus] = useState(null);
+
     const {
         register,
         handleSubmit,
@@ -143,7 +144,10 @@ export default function Form({ className, motionProps }) {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) =>
+        axios
+            .post('/api/submit-form', data)
+            .then((response) => setFormSubmitStatus(response.status));
 
     const formRef = useRef(null);
     const isInView = useInView(formRef, { amount: 1, once: false });
