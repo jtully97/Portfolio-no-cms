@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { variables } from '@/styles/Variables';
 import curtainOpenLottie from './lottie/curtainOpenLottie.json';
 import { useLottie } from 'lottie-react';
 import { useInView } from 'framer-motion';

@@ -18,18 +18,24 @@ export const navData = {
     ],
 };
 
+import EmailIcon from '@/components/svgJsx/emailIcon/Index';
+import LinkedinIcon from '@/components/svgJsx/linkedin/Index';
+import GithubIcon from '@/components/svgJsx/github/Index';
+
 export const footerData = {
     linkIconHeading: 'Socials',
     iconLinks: [
         {
-            icon: {
-                src: '',
-            },
+            href: 'mailto:contactme@jdtully.com',
+            icon: EmailIcon,
         },
         {
-            icon: {
-                src: '',
-            },
+            href: 'https://www.linkedin.com/in/joshua-tully/',
+            icon: LinkedinIcon,
+        },
+        {
+            href: 'https://github.com/jtully97',
+            icon: GithubIcon,
         },
     ],
 };
@@ -310,26 +316,7 @@ export const landingPageData = {
                     src: '/projects/MJ-insurance-agency.png',
                     alt: 'MJ Schuetz Insurance home page',
                 },
-                imgs: [
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img1.png',
-                            alt: 'beggars pizza map',
-                        },
-                    },
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img2.png',
-                            alt: 'beggars pizza white sox',
-                        },
-                    },
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img3.png',
-                            alt: 'beggars pizza module',
-                        },
-                    },
-                ],
+                imgs: [],
             },
             {
                 heading: 'C4 Chicago',
@@ -355,26 +342,7 @@ export const landingPageData = {
                     src: '/projects/C4-Chi.png',
                     alt: 'C4 Chicago home page',
                 },
-                imgs: [
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img1.png',
-                            alt: 'beggars pizza map',
-                        },
-                    },
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img2.png',
-                            alt: 'beggars pizza white sox',
-                        },
-                    },
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img3.png',
-                            alt: 'beggars pizza module',
-                        },
-                    },
-                ],
+                imgs: [],
             },
             {
                 heading: 'SafeCare Corp',
@@ -400,26 +368,7 @@ export const landingPageData = {
                     src: '/projects/safecare-poster.png',
                     alt: 'safecare home page',
                 },
-                imgs: [
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img1.png',
-                            alt: 'beggars pizza map',
-                        },
-                    },
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img2.png',
-                            alt: 'beggars pizza white sox',
-                        },
-                    },
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img3.png',
-                            alt: 'beggars pizza module',
-                        },
-                    },
-                ],
+                imgs: [],
             },
 
             {
@@ -446,26 +395,7 @@ export const landingPageData = {
                     src: '/projects/townsend-tree-services.png',
                     alt: 'Townsend Tree Services home page',
                 },
-                imgs: [
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img1.png',
-                            alt: 'beggars pizza map',
-                        },
-                    },
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img2.png',
-                            alt: 'beggars pizza white sox',
-                        },
-                    },
-                    {
-                        img: {
-                            src: '/projects/beggars/carousel/img3.png',
-                            alt: 'beggars pizza module',
-                        },
-                    },
-                ],
+                imgs: [],
             },
         ],
     },

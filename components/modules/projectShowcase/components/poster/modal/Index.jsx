@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import { variables } from '@/styles/Variables';
-import Close from '@/components/svg/close/Index';
+import Close from '@/components/svgJsx/close/Index';
 import { MediaQueries } from '@/styles/Utilities';
 import useScrollBlock from '@/customHooks/useScrollBlock';
 

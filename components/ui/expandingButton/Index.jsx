@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { variables } from '@/styles/Variables';
 import { useEffect, useState } from 'react';
-import Close from '@/components/svg/close/Index';
+import Close from '@/components/svgJsx/close/Index';
 import { glowMobile, neonderthaw } from '@/styles/Type';
 import { glow } from '@/styles/Type';
 import { MediaQueries } from '@/styles/Utilities';

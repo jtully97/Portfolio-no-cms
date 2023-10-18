@@ -51,8 +51,14 @@ const StyledImgCarousel = styled(ImgCarousel)`
 
 /* Backup in event that carousel images do not exist */
 const StyledImage = styled(Image)`
-    object-fit: cover;
+    object-fit: contain;
     margin-top: 24px;
+    background-color: #000;
+    width: 100%;
+
+    @media ${MediaQueries.mobile} {
+        height: auto;
+    }
 `;
 
 const ContentUl = styled.ul`
