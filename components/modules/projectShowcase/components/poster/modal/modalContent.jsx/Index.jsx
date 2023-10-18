@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
     ${containerStyles}
-    max-width: 1080px;
+    max-width: 970px;
     height: 100%;
     width: 100%;
     display: flex;
