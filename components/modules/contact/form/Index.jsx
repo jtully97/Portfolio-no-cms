@@ -229,7 +229,7 @@ export default function Form({
                                 placeholder='Email Address*'
                                 {...register('email', {
                                     required: true,
-                                    pattern: /^\S+@\S+$/i,
+                                    pattern: /^[\w\.-]+@[\w\.-]+\.\w+$/,
                                 })}
                             />
                             {errors.email && (
