@@ -150,6 +150,7 @@ export default function Poster({
                         width={601}
                         height={448.5}
                         className={buttonHovered && 'hovered'}
+                        priority={true}
                     />
                     <Curtains>{curtainLottie}</Curtains>
                 </ImageWrapper>

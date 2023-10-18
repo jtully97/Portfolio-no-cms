@@ -35,6 +35,13 @@ const InnerContainer = styled.div`
     }
 `;
 
+const ImageContentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+`;
+
 const Heading = styled.h3`
     ${h3styles}
     margin-bottom: 8px;
@@ -139,18 +146,20 @@ export default function ModalContent({
     return (
         <Container>
             <InnerContainer>
-                <Heading>{heading}</Heading>
-                <Subheading>{subheading}</Subheading>
-                {imgs.length !== 0 ? (
-                    <StyledImgCarousel imgs={imgs} />
-                ) : (
-                    <StyledImage
-                        width={902}
-                        height={509.767}
-                        src={img.src}
-                        alt={img.alt}
-                    />
-                )}
+                <ImageContentWrapper>
+                    <Heading>{heading}</Heading>
+                    <Subheading>{subheading}</Subheading>
+                    {imgs.length !== 0 ? (
+                        <StyledImgCarousel imgs={imgs} />
+                    ) : (
+                        <StyledImage
+                            width={902}
+                            height={509.767}
+                            src={img.src}
+                            alt={img.alt}
+                        />
+                    )}
+                </ImageContentWrapper>
                 <ContentUl id='draggable-container'>
                     {content.map((item, index) => (
                         <ContentLi
