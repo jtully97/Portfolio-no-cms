@@ -10,7 +10,7 @@ const NavDisplayWrapper = styled.div`
     position: fixed;
     right: ${(props) => (props.$loaded ? '25px' : '-100%')};
     top: 25px;
-    z-index: 10;
+    z-index: ${(props) => (props.$loaded ? '10' : '-10')};
     transition: right ease-out 0.5s;
 
     @media ${MediaQueries.mobile} {

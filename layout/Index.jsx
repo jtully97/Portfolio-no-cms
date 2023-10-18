@@ -8,9 +8,7 @@ export default function Layout({ children }) {
     return (
         <>
             <Navigation data={navData} />
-            <StyledComponentsRegistry>
-                <main id='main'>{children}</main>
-            </StyledComponentsRegistry>
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
             <Footer iconLinks={footerData.iconLinks} />
         </>
     );
