@@ -7,6 +7,7 @@ import CardShowcase from '@/components/modules/cardShowcase/Index';
 import ProjectShowcase from '@/components/modules/projectShowcase/Index';
 import { landingPageData } from '@/data/Index';
 import Contact from '@/components/modules/contact/Index';
+import Script from 'next/script';
 
 export default function Home() {
     return (
@@ -20,6 +21,20 @@ export default function Home() {
                 />
                 <link rel='icon' href='/favicon.ico' />
             </Head>
+
+            <Script
+                async
+                src='https://www.googletagmanager.com/gtag/js?id=G-DEE33CNKP9'
+            />
+            <Script id='google-analytics'>
+                {`window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-DEE33CNKP9');
+                    `}
+            </Script>
+
             <main>
                 <MainHero />
                 <CardShowcase
