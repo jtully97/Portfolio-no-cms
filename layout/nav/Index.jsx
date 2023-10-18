@@ -4,18 +4,22 @@ import ExpandingButton from '@/components/ui/expandingButton/Index';
 import { pBase } from '@/styles/Type';
 import { variables } from '@/styles/Variables';
 import { MediaQueries } from '@/styles/Utilities';
+import { useEffect, useState } from 'react';
 
-const StyledExpandingButton = styled(ExpandingButton)`
+const NavDisplayWrapper = styled.div`
     position: fixed;
-    right: 25px;
+    right: ${(props) => (props.$loaded ? '25px' : '-100%')};
     top: 25px;
     z-index: 10;
+    transition: right ease-out 0.5s;
 
     @media ${MediaQueries.mobile} {
-        right: 10px;
+        right: ${(props) => (props.$loaded ? '10px' : '-100%')};
         top: 10px;
     }
 `;
+
+const StyledExpandingButton = styled(ExpandingButton)``;
 
 const Nav = styled.nav`
     display: flex;
@@ -62,23 +66,31 @@ const StyledLink = styled(Link)`
 `;
 
 export default function Navigation({ data }) {
-    return (
-        <StyledExpandingButton>
-            <Nav>
-                <Ul>
-                    {data.links.map((link, index) => {
-                        const { text, href, target } = link;
+    const [loaded, setLoaded] = useState(false);
 
-                        return (
-                            <Li key={index}>
-                                <StyledLink href={href} target={target}>
-                                    {text}
-                                </StyledLink>
-                            </Li>
-                        );
-                    })}
-                </Ul>
-            </Nav>
-        </StyledExpandingButton>
+    useEffect(() => {
+        setTimeout(() => setLoaded(true), 1500);
+    }, []);
+
+    return (
+        <NavDisplayWrapper $loaded={loaded}>
+            <StyledExpandingButton>
+                <Nav>
+                    <Ul>
+                        {data.links.map((link, index) => {
+                            const { text, href, target } = link;
+
+                            return (
+                                <Li key={index}>
+                                    <StyledLink href={href} target={target}>
+                                        {text}
+                                    </StyledLink>
+                                </Li>
+                            );
+                        })}
+                    </Ul>
+                </Nav>
+            </StyledExpandingButton>
+        </NavDisplayWrapper>
     );
 }
