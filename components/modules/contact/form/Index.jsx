@@ -140,12 +140,13 @@ const SubmitButton = styled.button`
     background-color: #00d9ff;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color ease-out 0.3s;
+    transition: all ease-out 0.3s;
     margin-top: 8px;
     ${pXSmall}
 
     &:hover {
         background-color: ${variables.color2};
+        scale: 1.1;
     }
 `;
 
@@ -228,10 +229,13 @@ export default function Form({
                                 placeholder='Email Address*'
                                 {...register('email', {
                                     required: true,
+                                    pattern: /^\S+@\S+$/i,
                                 })}
                             />
                             {errors.email && (
-                                <ErrorMessage>Email is required</ErrorMessage>
+                                <ErrorMessage>
+                                    Please enter a valid email
+                                </ErrorMessage>
                             )}
                             <TextArea
                                 placeholder='Message*'
