@@ -80,6 +80,10 @@ const Background = styled.div`
 const MotionFormWrapper = styled(motion.div)`
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    min-height: ${(props) =>
+        props.$heightOnSubmit ? props.$heightOnSubmit + 'px' : 'unset'};
 `;
 
 const MotionForm = styled(motion.form)`
@@ -135,11 +139,14 @@ const SubmitButton = styled.button`
     border: unset;
     background-color: #00d9ff;
     border-radius: 4px;
-    filter: ${(props) => (props.disabled ? 'brightness(.5)' : 'brightness(1)')};
-    cursor: ${(props) => (props.disabled ? 'pointer' : 'cursor')};
-    transition: filter ease-out 0.3s;
+    cursor: pointer;
+    transition: background-color ease-out 0.3s;
     margin-top: 8px;
     ${pXSmall}
+
+    &:hover {
+        background-color: ${variables.color2};
+    }
 `;
 
 const PostSubmissionMessage = styled(motion.p)`
@@ -153,18 +160,6 @@ const PostSubmissionMessage = styled(motion.p)`
     @media ${MediaQueries.mobile} {
         padding: 24px;
     }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        opacity: 0.5;
-        z-index: -1;
-    }
 `;
 
 export default function Form({
@@ -174,6 +169,7 @@ export default function Form({
     failedMessage,
 }) {
     const [formSubmitStatus, setFormSubmitStatus] = useState(null);
+    const [formHeight, setFormHeight] = useState(null);
 
     const {
         register,
@@ -182,10 +178,14 @@ export default function Form({
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) =>
+    const onSubmit = (data) => {
+        let form = document.getElementById('contact-form');
+        setFormHeight(form.offsetHeight);
+
         axios
             .post('/api/submit-form', data)
             .then((response) => setFormSubmitStatus(response.status));
+    };
 
     const formRef = useRef(null);
     const isInView = useInView(formRef, { amount: 1, once: false });
@@ -207,9 +207,10 @@ export default function Form({
     };
 
     return (
-        <Container className={className} {...motionProps}>
-            {
-                <AnimatePresence mode='wait'>
+        <Container className={className} {...motionProps} ref={formRef}>
+            <AnimatePresence mode='wait'>
+                <MotionFormWrapper $heightOnSubmit={formHeight}>
+                    <Background $playAnimation={formInView} />
                     {formSubmitStatus ? (
                         <PostSubmissionMessage {...FormViewSwitchMotionProps}>
                             {formSubmitStatus === 200
@@ -217,43 +218,39 @@ export default function Form({
                                 : failedMessage}
                         </PostSubmissionMessage>
                     ) : (
-                        <MotionFormWrapper {...FormViewSwitchMotionProps}>
-                            <Background $playAnimation={formInView} />
-                            <MotionForm
-                                onSubmit={handleSubmit(onSubmit)}
-                                ref={formRef}
-                                $inView={formInView}
-                            >
-                                <Input
-                                    placeholder='Name'
-                                    {...register('name')}
-                                />
-                                <Input
-                                    placeholder='Email Address*'
-                                    {...register('email', { required: true })}
-                                />
-                                {errors.email && (
-                                    <ErrorMessage>
-                                        Email is required
-                                    </ErrorMessage>
-                                )}
-                                <TextArea
-                                    placeholder='Message*'
-                                    {...register('message', { required: true })}
-                                />
-                                {errors.message && (
-                                    <ErrorMessage>
-                                        A message is required
-                                    </ErrorMessage>
-                                )}
-                                <SubmitButton disabled={false} type='submit'>
-                                    Submit
-                                </SubmitButton>
-                            </MotionForm>
-                        </MotionFormWrapper>
+                        <MotionForm
+                            onSubmit={handleSubmit(onSubmit)}
+                            {...FormViewSwitchMotionProps}
+                            id='contact-form'
+                        >
+                            <Input placeholder='Name' {...register('name')} />
+                            <Input
+                                placeholder='Email Address*'
+                                {...register('email', {
+                                    required: true,
+                                })}
+                            />
+                            {errors.email && (
+                                <ErrorMessage>Email is required</ErrorMessage>
+                            )}
+                            <TextArea
+                                placeholder='Message*'
+                                {...register('message', {
+                                    required: true,
+                                })}
+                            />
+                            {errors.message && (
+                                <ErrorMessage>
+                                    A message is required
+                                </ErrorMessage>
+                            )}
+                            <SubmitButton disabled={false} type='submit'>
+                                Submit
+                            </SubmitButton>
+                        </MotionForm>
                     )}
-                </AnimatePresence>
-            }
+                </MotionFormWrapper>
+            </AnimatePresence>
         </Container>
     );
 }

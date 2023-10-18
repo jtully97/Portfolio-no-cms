@@ -53,7 +53,6 @@ const StyledImgCarousel = styled(ImgCarousel)`
 const StyledImage = styled(Image)`
     object-fit: contain;
     margin-top: 24px;
-    background-color: #000;
     width: 100%;
 
     @media ${MediaQueries.mobile} {

@@ -184,7 +184,7 @@ export default function Contact({
                         transition={{ duration: 0.65 }}
                     >
                         Hate contact forms? Email me{' '}
-                        <a href={`mailto:${email}`}>Here</a>
+                        <a href={`mailto:${email}`}>here</a>
                     </Subheading>
                 </ContentContainer>
                 <StyledForm

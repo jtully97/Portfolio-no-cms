@@ -165,7 +165,7 @@ export const landingPageData = {
     projectShowcase: {
         //Images 1202 x 897px
         eyebrow: 'now showing',
-        heading: 'Some of My Projects',
+        heading: 'Some of My Latest Projects',
         projects: [
             {
                 heading: 'Beggars Pizza',
@@ -173,6 +173,9 @@ export const landingPageData = {
                     'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
                 url: 'https://www.beggarspizza.com/',
                 content: [
+                    {
+                        li: "visit website <a href='https://www.beggarspizza.com/' target='_blank'>here</a>",
+                    },
                     {
                         li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
                     },
@@ -219,7 +222,10 @@ export const landingPageData = {
                 url: 'https://chicagolivinggroup.com/',
                 content: [
                     {
-                        li: 'Utilizes a Modular Design: Employing React.js and Styled Components integrated with Strapi CMS components to create a modern design.',
+                        li: "visit website <a href='https://chicagolivinggroup.com/' target='_blank'>here</a>",
+                    },
+                    {
+                        li: 'Utilizes a Modular Design: Employing React.js and Styled Components integrated with Strapi CMS components to create a modern design that allows for hundreds of different page combinations.',
                     },
                     {
                         li: 'Optimizes Page Speeds: Leveraging Next.js for static page generation, ensuring rapid load times while maintaining SEO-friendliness.',
@@ -268,23 +274,23 @@ export const landingPageData = {
             {
                 heading: 'Tulayna Limo Service',
                 subheading:
-                    'React.js & Next.js, styled Components, Strapi CMS, S3 media delivery',
-                url: 'https://www.beggarspizza.com/',
+                    'Freelance Project: React.js & Next.js, styled Components, Strapi CMS, S3 media delivery',
+                url: 'https://www.tulaynalimoservice.com/',
                 content: [
                     {
-                        li: 'Optimizes Page Speeds: Achieving remarkable speed and SEO friendliness through Next.js static page generation.',
+                        li: "visit website <a href='https://www.tulaynalimoservice.com/' target='_blank'>here</a>",
                     },
                     {
-                        li: 'Custom Google Maps Component: Develops a custom Google Maps component using the Google Maps JavaScript SDK, incorporating geocoding calculations for locating stores within user-specified locations (serving thousands of monthly users).',
+                        li: 'Performant driven frontend utilizing Next.js static page generation for static CMS content',
                     },
                     {
-                        li: 'Efficient Automation with Node.js: Implements Node.js Lifecycle hooks within the CMS for automating tasks, such as geocoding location inputs using the Google Geocoding API and updating the CMS with response data.',
+                        li: 'Node.js backend with custom built services ie: data tracking on QR code scans within customers business cards ',
                     },
                     {
-                        li: 'Optimal Media Delivery: Ensures smooth media delivery through the use of the Cloudinary CDN.',
+                        li: 'Google analytics tracking',
                     },
                     {
-                        li: 'Utilizes a Modular Design: Leveraging React.js and Styled Components, tightly integrated with Strapi CMS components.',
+                        li: 'Custom made brand including but not limited to: logo, color scheme, type, etc.',
                     },
                 ],
                 img: {
@@ -299,6 +305,9 @@ export const landingPageData = {
                     'Custom built theme using php, SCSS/SASS, Wordpress CMS, Dynamic Animations',
                 url: 'https://schuetzinsurance.com',
                 content: [
+                    {
+                        li: "visit website <a href='https://schuetzinsurance.com/' target='_blank'>here</a>",
+                    },
                     {
                         li: 'Modular design using Advanced Custom Fields',
                     },
@@ -322,21 +331,26 @@ export const landingPageData = {
                 heading: 'C4 Chicago',
                 subheading:
                     'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
-                url: 'https://www.beggarspizza.com/',
+                url: 'https://www.c4chicago.org/',
                 content: [
                     {
-                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                        li: "visit website <a href='https://www.c4chicago.org/' target='_blank'>here</a>",
                     },
                     {
-                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                        li: 'Crafted a bespoke PHP theme utilizing the power of Advanced Custom Fields for a unique web experience.',
                     },
                     {
-                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                        li: 'Elevated user engagement through the implementation of dynamic page animations powered by JavaScript.',
                     },
                     {
-                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                        li: 'Achieved a modular and highly customizable design, both at the code level and within the content management system, enabling a virtually limitless array of configurations.',
                     },
-                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                    {
+                        li: 'Enhanced online visibility by adopting SEO-friendly practices, including semantic markup and industry best standards.',
+                    },
+                    {
+                        li: 'Ensured web accessibility to make the site inclusive and user-friendly for all visitors.',
+                    },
                 ],
                 img: {
                     src: '/projects/C4-Chi.png',
@@ -348,52 +362,30 @@ export const landingPageData = {
                 heading: 'SafeCare Corp',
                 subheading:
                     'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
-                url: 'https://www.beggarspizza.com/',
+                url: 'https://safecarecorp.com/',
                 content: [
                     {
-                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
+                        li: "visit website <a href='https://safecarecorp.com/' target='_blank'>here</a>",
                     },
                     {
-                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
+                        li: 'Employed cutting-edge PHP development to create a custom theme, seamlessly integrating Advanced Custom Fields for a unique web presence.',
                     },
                     {
-                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
+                        li: 'Elevated user interaction through the incorporation of dynamic page animations powered by JavaScript, delivering a captivating user experience.',
                     },
                     {
-                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
+                        li: 'Enabled endless customization possibilities with a modular design approach, both at the code and content management system levels, offering unparalleled flexibility in website configuration.',
                     },
-                    { li: 'Media delivery through the use of Cloudinary CDN' },
+                    {
+                        li: 'Maximized online visibility by implementing best practices for search engine optimization, embracing semantic markup to enhance search engine rankings.',
+                    },
+                    {
+                        li: 'Ensured universal accessibility, providing an inclusive and user-friendly web experience for all site visitors.',
+                    },
                 ],
                 img: {
                     src: '/projects/safecare-poster.png',
                     alt: 'safecare home page',
-                },
-                imgs: [],
-            },
-
-            {
-                heading: 'Townsend Tree Services',
-                subheading:
-                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
-                url: 'https://www.beggarspizza.com/',
-                content: [
-                    {
-                        li: 'Modular design using React.js & Styled Components bound to Strapi CMS components',
-                    },
-                    {
-                        li: 'Lightening fast page speeds and SEO friendly through Next.js static page generation',
-                    },
-                    {
-                        li: 'Node.js Lifecycle hooks within the CMS for automating tasks like calculating geo codes on location inputs by reaching out to google geocoding api and populating the CMS with response data',
-                    },
-                    {
-                        li: 'Custom built Google Maps component using google maps Javascript SDK and geocoding calculations for finding stores within user specified location inputs (Thousands of monthly users)',
-                    },
-                    { li: 'Media delivery through the use of Cloudinary CDN' },
-                ],
-                img: {
-                    src: '/projects/townsend-tree-services.png',
-                    alt: 'Townsend Tree Services home page',
                 },
                 imgs: [],
             },
