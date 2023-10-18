@@ -70,7 +70,7 @@ export const landingPageData = {
             {
                 skill: 'React.js',
                 img: {
-                    src: '/techIcons/react.svg',
+                    src: '/techIcons/react-2.svg',
                     alt: 'react.js icon',
                 },
             },
