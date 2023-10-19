@@ -29,6 +29,10 @@ const InnerContainer = styled.div`
     min-height: 0;
     flex-grow: 1;
 
+    @media screen and (max-width: 1440px) and (max-height: 762px) {
+        max-width: 700px;
+    }
+
     @media ${MediaQueries.tablet} {
         align-items: start;
         max-width: 980px;
