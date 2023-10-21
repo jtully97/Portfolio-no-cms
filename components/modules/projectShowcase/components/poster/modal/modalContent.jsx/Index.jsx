@@ -49,14 +49,20 @@ const ImageContentWrapper = styled.div`
 const Heading = styled.h3`
     ${h3styles}
     margin-bottom: 8px;
+    text-align: center;
 
     @media ${MediaQueries.mobile} {
-        margin-right: auto;
+        text-align: start;
     }
 `;
 
 const Subheading = styled.p`
     ${pXSmall}
+    text-align: center;
+
+    @media ${MediaQueries.mobile} {
+        text-align: start;
+    }
 `;
 
 const StyledImgCarousel = styled(ImgCarousel)`
