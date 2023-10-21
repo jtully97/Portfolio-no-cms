@@ -49,6 +49,10 @@ const ImageContentWrapper = styled.div`
 const Heading = styled.h3`
     ${h3styles}
     margin-bottom: 8px;
+
+    @media ${MediaQueries.mobile} {
+        margin-right: auto;
+    }
 `;
 
 const Subheading = styled.p`
