@@ -79,6 +79,7 @@ const StyledImage = styled(Image)`
         rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     @media ${MediaQueries.mobile} {
+        aspect-ratio: unset;
         height: auto;
     }
 `;
