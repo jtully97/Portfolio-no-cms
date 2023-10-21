@@ -328,9 +328,59 @@ export const landingPageData = {
                 imgs: [],
             },
             {
+                heading: 'Arcoa',
+                subheading:
+                    'Custom built theme using PHP, HTML, SASS/SCSS, modular CMS',
+                url: 'https://www.thinkarcoa.com/',
+                content: [
+                    {
+                        li: "visit website <a href='https://www.thinkarcoa.com/' target='_blank'>here</a>",
+                    },
+                    {
+                        li: 'Developed a custom PHP theme, harnessing the capabilities of Advanced Custom Fields to create a unique web experience.',
+                    },
+                    {
+                        li: 'Implemented dynamic page animations powered by JavaScript to enhance user engagement.',
+                    },
+                    {
+                        li: 'Designed for modularity and extensive customization, both in the codebase and content management system, allowing for virtually limitless configurations.',
+                    },
+                    {
+                        li: 'Improved online visibility through the adoption of SEO-friendly practices, including semantic markup and adherence to industry standards.',
+                    },
+                    {
+                        li: 'Ensured web accessibility to create an inclusive and user-friendly experience for all site visitors.',
+                    },
+                ],
+                img: {
+                    src: '/projects/arcoa/arcoa-poster.png',
+                    alt: 'arcoa home page',
+                },
+                imgs: [
+                    {
+                        img: {
+                            src: '/projects/arcoa/arcoa-poster.png',
+                            alt: 'arcoa home page',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/arcoa/carousel/arcoa-about-min.png',
+                            alt: 'arcoa about page',
+                        },
+                    },
+                    {
+                        img: {
+                            src: '/projects/arcoa/carousel/arcoa-blog-min.png',
+                            alt: 'arcoa blog page',
+                        },
+                    },
+                ],
+            },
+            {
                 heading: 'C4 Chicago',
                 subheading:
-                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                    'Custom built theme using PHP, HTML, SASS/SCSS, modular CMS',
                 url: 'https://www.c4chicago.org/',
                 content: [
                     {

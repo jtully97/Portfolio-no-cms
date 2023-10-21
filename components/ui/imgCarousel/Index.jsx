@@ -41,6 +41,8 @@ const StyledImage = styled(motion.img)`
     aspect-ratio: 902 / 483;
     min-width: 100%;
     height: auto;
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.3); /* Black w/opacity/see-through */
     border-radius: 4px;
     box-shadow:
         rgba(0, 0, 0, 0.25) 0px 54px 55px,
