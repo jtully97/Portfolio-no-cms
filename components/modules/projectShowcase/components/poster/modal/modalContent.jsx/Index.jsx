@@ -7,43 +7,52 @@ import Image from 'next/image';
 
 const Container = styled.div`
     position: absolute;
-    top: 60px;
+    top: 15vh;
     right: 0;
     bottom: 0;
     left: 0;
     width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
+
+    @media ${MediaQueries.tablet} {
+        top: 60px;
+        height: unset;
+    }
 `;
 
 const InnerContainer = styled.div`
     ${containerStyles}
-    max-width: 970px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     height: 100%;
     width: 100%;
-    display: flex;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-items: center;
     min-height: 0;
     flex-grow: 1;
 
-    @media screen and (max-height: 762px) {
-        max-width: 700px;
+    @media ${MediaQueries.desktop} {
+        gap: 28px 70px;
     }
 
     @media ${MediaQueries.tablet} {
-        align-items: start;
+        display: flex;
+        flex-direction: column;
+        max-width: 700px;
+        align-items: center;
         max-width: 980px;
+        gap: 18px;
+    }
+
+    @media ${MediaQueries.mobile} {
+        align-items: start;
+        gap: 14px;
     }
 `;
 
-const ImageContentWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+const HeadingWrapper = styled.div`
+    grid-column: 1 / span 2;
 `;
 
 const Heading = styled.h3`
@@ -67,7 +76,18 @@ const Subheading = styled.p`
 
 const StyledImgCarousel = styled(ImgCarousel)`
     width: 100%;
-    margin-top: 24px;
+    overflow: hidden;
+    height: fit-content;
+
+    @media ${MediaQueries.desktop} {
+        margin: auto 0;
+    }
+
+    @media ${MediaQueries.tablet} {
+        margin-top: 24px;
+        overflow: visible;
+        height: unset;
+    }
 `;
 
 /* Backup in event that carousel images do not exist */
@@ -79,6 +99,10 @@ const StyledImage = styled(Image)`
     min-width: 100%;
     height: auto;
     object-fit: contain;
+
+    @media ${MediaQueries.desktop} {
+        margin: auto 0;
+    }
 
     @media ${MediaQueries.mobile} {
         aspect-ratio: unset;
@@ -92,7 +116,6 @@ const ContentUl = styled.ul`
     flex-direction: column;
     gap: 14px;
     width: 100%;
-    margin-top: 14px;
     flex: 1;
     overflow: auto;
     min-height: 0;
@@ -113,6 +136,14 @@ const ContentUl = styled.ul`
 
     a {
         text-decoration: underline;
+    }
+
+    @media ${MediaQueries.desktop} {
+        margin: auto 0;
+    }
+
+    @media ${MediaQueries.tablet} {
+        margin-top: 14px;
     }
 `;
 
@@ -165,20 +196,21 @@ export default function ModalContent({
     return (
         <Container>
             <InnerContainer>
-                <ImageContentWrapper>
+                <HeadingWrapper>
                     <Heading>{heading}</Heading>
                     <Subheading>{subheading}</Subheading>
-                    {imgs.length !== 0 ? (
-                        <StyledImgCarousel imgs={imgs} />
-                    ) : (
-                        <StyledImage
-                            width={902}
-                            height={509.767}
-                            src={img.src}
-                            alt={img.alt}
-                        />
-                    )}
-                </ImageContentWrapper>
+                </HeadingWrapper>
+                {imgs.length !== 0 ? (
+                    <StyledImgCarousel imgs={imgs} />
+                ) : (
+                    <StyledImage
+                        width={902}
+                        height={509.767}
+                        src={img.src}
+                        alt={img.alt}
+                    />
+                )}
+
                 <ContentUl id='draggable-container'>
                     {content.map((item, index) => (
                         <ContentLi
