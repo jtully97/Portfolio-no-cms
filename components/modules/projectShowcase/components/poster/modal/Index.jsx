@@ -36,8 +36,8 @@ const CloseModal = styled.button`
     border: unset;
     z-index: 100;
     position: absolute;
-    top: 18px;
-    right: 38px;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
     width: 34px;
     height: 34px;
