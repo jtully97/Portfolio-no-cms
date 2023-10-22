@@ -33,7 +33,7 @@ const InnerContainer = styled.div`
     flex-grow: 1;
 
     @media ${MediaQueries.desktop} {
-        gap: 28px 70px;
+        gap: 40px 70px;
     }
 
     @media ${MediaQueries.tablet} {
@@ -125,6 +125,17 @@ const ContentUl = styled.ul`
     padding-right: 5px;
     z-index: 2;
 
+    @media ${MediaQueries.desktop} {
+        margin: auto 0;
+        list-style: disclosure-closed;
+        padding-left: 15px;
+        gap: 24px;
+    }
+
+    @media ${MediaQueries.tablet} {
+        margin-top: 14px;
+    }
+
     &::-webkit-scrollbar {
         width: 0;
         display: none;
@@ -137,50 +148,50 @@ const ContentUl = styled.ul`
     a {
         text-decoration: underline;
     }
-
-    @media ${MediaQueries.desktop} {
-        margin: auto 0;
-    }
-
-    @media ${MediaQueries.tablet} {
-        margin-top: 14px;
-    }
 `;
 
 const ContentLi = styled.li`
     ${pXSmall}
-    padding: 8px 18px;
-    color: #000;
+    color: #fff;
     position: relative;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        border-radius: 14px;
-        z-index: -1;
-        border: 2px solid #000;
+    @media ${MediaQueries.tablet} {
+        color: #000;
+        padding: 8px 18px;
     }
 
-    &:not(:last-of-type) {
-        &::before {
+    @media ${MediaQueries.tablet} {
+        &::after {
             content: '';
             position: absolute;
-            width: 14px;
-            height: 14px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-color: #fff;
-            left: 40px;
-            bottom: -16px;
-            z-index: 1;
-            border-left: 2px solid #000;
-            border-right: 2px solid #000;
+            border-radius: 14px;
+            z-index: -1;
+            border: 2px solid #000;
+        }
+    }
 
-            @media ${MediaQueries.mobile} {
-                left: 34px;
+    @media ${MediaQueries.tablet} {
+        &:not(:last-of-type) {
+            &::before {
+                content: '';
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                background-color: #fff;
+                left: 40px;
+                bottom: -16px;
+                z-index: 1;
+                border-left: 2px solid #000;
+                border-right: 2px solid #000;
+
+                @media ${MediaQueries.mobile} {
+                    left: 34px;
+                }
             }
         }
     }
