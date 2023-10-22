@@ -103,7 +103,6 @@ const StyledImage = styled(Image)`
 
     @media ${MediaQueries.desktop} {
         margin: auto 0;
-        object-position: right;
     }
 
     @media ${MediaQueries.tablet} {
