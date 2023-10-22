@@ -24,6 +24,7 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
     ${containerStyles}
+    max-width: 1600px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
@@ -95,13 +96,18 @@ const StyledImage = styled(Image)`
     object-fit: contain;
     margin-top: 24px;
     width: 100%;
-    aspect-ratio: 902 / 483;
+
     min-width: 100%;
     height: auto;
     object-fit: contain;
 
     @media ${MediaQueries.desktop} {
         margin: auto 0;
+        object-position: right;
+    }
+
+    @media ${MediaQueries.tablet} {
+        aspect-ratio: 902 / 483;
     }
 
     @media ${MediaQueries.mobile} {
