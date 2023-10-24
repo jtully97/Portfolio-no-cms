@@ -199,6 +199,7 @@ export default function ImgCarousel({ className, imgs = [] }) {
                     <StyledImage
                         src={imgs[imageIndex].img.src}
                         alt={imgs[imageIndex].img.alt}
+                        loading='eager'
                         key={page}
                         custom={direction}
                         variants={variants}
