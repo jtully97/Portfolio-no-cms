@@ -330,7 +330,7 @@ export const landingPageData = {
             {
                 heading: 'Arcoa',
                 subheading:
-                    'Custom built theme using PHP, HTML, SASS/SCSS, modular CMS',
+                    'Custom built theme using PHP, HTML, SASS/SCSS, modular CMS, Lottie files',
                 url: 'https://www.thinkarcoa.com/',
                 content: [
                     {
@@ -411,7 +411,7 @@ export const landingPageData = {
             {
                 heading: 'SafeCare Corp',
                 subheading:
-                    'React.js & Next.js, styled Components, Strapi CMS, Google Maps Javascript SDK, Google Geocoding',
+                    'Custom built theme using PHP, HTML, SASS/SCSS, modular CMS',
                 url: 'https://safecarecorp.com/',
                 content: [
                     {
