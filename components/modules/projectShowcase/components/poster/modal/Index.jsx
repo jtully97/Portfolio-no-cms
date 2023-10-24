@@ -13,9 +13,8 @@ const ModalContainer = styled(motion.div)`
     z-index: 11;
     width: 100vw;
     height: 100dvh;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 
     &::before {
         content: '';
@@ -26,7 +25,7 @@ const ModalContainer = styled(motion.div)`
         height: 100%;
         z-index: 0;
         background: #000;
-        opacity: 0.6;
+        opacity: 0.5;
         z-index: -1;
     }
 `;
@@ -36,8 +35,8 @@ const CloseModal = styled.button`
     border: unset;
     z-index: 100;
     position: absolute;
-    top: 18px;
-    right: 38px;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
     width: 34px;
     height: 34px;
