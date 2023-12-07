@@ -40,10 +40,6 @@ class MyDocument extends Document {
                                     gtag('config', 'G-DEE33CNKP9');`,
                         }}
                     />
-                    <meta
-                        name='description'
-                        content='Discover the diverse skill set and innovative projects showcased by Josh Tully. Explore a portfolio featuring technologies like JavaScript, React.js, Next.js, Strapi CMS, and more. Connect with Josh through his skills, projects, and socials. Reach out to discuss collaborations and initiatives.'
-                    />
                 </Head>
                 <body>
                     <Main />
