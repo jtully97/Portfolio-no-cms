@@ -194,8 +194,6 @@ const MainHero = () => {
                     <motion.h1>
                         <motion.span
                             className='eyebrow'
-                            initial={{ x: -100, opacity: 0, scale: 0 }}
-                            animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.7, duration: 0.7 }}
                             style={{
                                 y: springPercentage2,
@@ -208,8 +206,6 @@ const MainHero = () => {
                         <br />
                         <motion.span
                             className='large-txt'
-                            initial={{ x: -200, opacity: 0, scale: 0 }}
-                            animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8, duration: 0.7 }}
                             style={{
                                 y: springPercentage1,
@@ -221,8 +217,6 @@ const MainHero = () => {
                         </motion.span>
                         <motion.span
                             className='large-txt right'
-                            initial={{ x: 200, opacity: 0, scale: 0 }}
-                            animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1.2, duration: 0.7 }}
                             style={{
                                 y: springPercentage3,
@@ -234,8 +228,6 @@ const MainHero = () => {
                         </motion.span>
                     </motion.h1>
                     <motion.h2
-                        initial={{ x: 400, scale: 0, opacity: 0 }}
-                        animate={{ x: 0, scale: 1, opacity: 1 }}
                         transition={{ delay: 1.5, duration: 0.7 }}
                         style={{
                             y: springPercentage4,

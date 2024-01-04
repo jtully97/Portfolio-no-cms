@@ -76,7 +76,7 @@ const Heading = styled.h2`
 
 const ProjectsGridContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
     margin-top: 88px;
     gap: 54px 34px;
     justify-content: space-between;
@@ -96,7 +96,7 @@ const ProjectsGridContainer = styled.div`
 `;
 
 const StyledPoster = styled(Poster)`
-    max-width: 718px;
+    max-width: 818px;
     width: 100%;
 `;
 

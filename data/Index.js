@@ -61,6 +61,13 @@ export const landingPageData = {
                 },
             },
             {
+                skill: 'Typescript',
+                img: {
+                    src: '/techIcons/typescript.svg',
+                    alt: 'Typescript icon',
+                },
+            },
+            {
                 skill: 'Node.js',
                 img: {
                     src: '/techIcons/nodejs.svg',
