@@ -453,7 +453,7 @@ export const landingPageData = {
         heading: 'Talk to me',
         email: 'cotactme@jdtully.com',
         successMessage:
-            "Hey! Thanks for reaching out, your message wen't right to my personal inbox. I will get back to you as soon as possible!",
+            'Hey! Thanks for reaching out, your message went right to my personal inbox. I will get back to you as soon as possible!',
         failedMessage:
             'Oops, something happened during your form submission. Please reach out through one of my email links :)',
     },
